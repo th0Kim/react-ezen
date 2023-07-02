@@ -118,6 +118,8 @@ return name;
 
 ### .prettierrc
 
+https://prettier.io/docs/en/options.html
+
 {
 "dubleQuote": true, // 큰 따옴표 택 1
 "singleQuote": true, // 작은 따옴표 택 1
@@ -129,3 +131,98 @@ return name;
 settins가서
 default formatter > prettier code format 변경
 format on save > 체크
+
+
+### RCC
+import React, { Component } from 'react';
+
+class App extends Component {
+  
+  render() {
+    return <div></div>;
+  }
+}
+
+export default App;
+
+### RSC
+import React from 'react';
+
+const MyComponent = () => {
+    return (
+        <div>
+            
+        </div>
+    );
+};
+
+export default MyComponent;
+
+### Javascript의 인스턴스(Instance) ES5 : prototype
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.say = function(){
+  console.log(this.name + ' : 멍멍');
+}
+
+const dog = new Dog('흰둥이');
+dog.say();
+
+### Javascript의 인스턴스(Instance) ES6 : class
+class Dog{
+  constructor(name){
+    this.name = name;
+  }
+  say() {
+    console.log(this.name + ' : 멍멍');
+  }
+  cute() {
+    console.log(this.name + ' : 꺆');
+  }
+}
+
+const dog = new Dog('바둑이');
+const boy = new Dog('귀염둥이');
+dog.say();
+boy.cute();
+
+
+### Javascript의 인스턴스(Instance) 
+### function(){} , ()=> 차이
+function BlackDog(){
+  this.name = '흰둥이';
+  return {
+    name: '검둥이',
+    bark: function() {
+      console.log(this);
+      console.log(this.name + ' : 멍멍');
+    }
+  }
+}
+const blackDog = new BlackDog();//new : Instance
+blackDog.bark();//검둥이 : 멍멍
+
+====> 보안상 일반 function은 window에 접근에 문제가 있어서 ()=> 함수가 나옴
+function BlackDog(){
+  this.name = '흰둥이';
+  return {
+    name: '검둥이',
+    bark: ()=> {
+      console.log(this);
+      console.log(this.name + ' : 멍멍');//기존의 this.name을 가르킴
+    }
+  }
+}
+const blackDog = new BlackDog();//new : Instance
+blackDog.bark();//흰둥이 : 멍멍
+
+
+
+### 리액트 v16.8
+함수 컴포넌트의 단점은 state와 라이프사이클 API의 사용이 불가능하다는 점인데 
+이 단점은 리액트 v16.8버전으로 업데이트 이후 Hooks라는 기능이 도입이 되면서 해결되었다.
+클래스형과 비슷하게 구현할 수 있다.
+리액트 공식 매뉴얼에서는 컴포넌트를 새로 작성 할때는 함수 컴포넌트와 Hooks을 사용하도록 권장하고 있다.
+하지만 그렇다고 해서 클래스형 컴포넌트가 사라지는 것은 아니므로 클래스형 컴포넌트 기능을 알아둬야 함
