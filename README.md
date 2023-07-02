@@ -74,10 +74,17 @@ return name || '값이 undefined입니다.'
 
 null = 일부러 비워둔 것
 undefined = 공간은 있으나 빈것(리액트에서는 에러로 침, 기본값이 존재 해야 함)
-대응책
-  const name = undefined;
-  return name || '값이 undefined입니다.'
 
-잘못 된 undefined 처리
-  const name = undefined;
-  return name;
+리액트 컴포넌트에서는 함수에서 undefined만 반환하여 렌더링하면 안된다.
+만약 undefined이 꼭 필요한 경우 ||연산자를 사용하여 undefined 일때 사용할 값을 지정해 오류를 방지할 수 있다.
+  오류 방지 대응책
+  function App() {
+    const name = undefined;
+    return name || '값이 undefined입니다.'
+  }
+
+  잘못 된 undefined 처리 예시
+  function App() {
+    const name = undefined;
+    return name;
+  }
