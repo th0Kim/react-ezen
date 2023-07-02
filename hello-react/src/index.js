@@ -17,3 +17,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+// reportWebVitals : 앱에서 성능 측정 log파일을 consloe에 출력 해줌
