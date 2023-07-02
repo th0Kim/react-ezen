@@ -191,6 +191,7 @@ boy.cute();
 
 ### Javascript의 인스턴스(Instance) 
 ### function(){} , ()=> 차이
+일반함수는 자신이 종속된 객체를 this로 가르키고 화살표함수는 자신이 종속된 인스턴스(new로 선언된)을 가르킨다.
 function BlackDog(){
   this.name = '흰둥이';
   return {
@@ -215,8 +216,8 @@ function BlackDog(){
     }
   }
 }
-const blackDog = new BlackDog();//new : Instance
-blackDog.bark();//흰둥이 : 멍멍
+const whiteDog = new BlackDog();//new : Instance
+whiteDog.bark();//흰둥이 : 멍멍
 
 
 
@@ -226,3 +227,8 @@ blackDog.bark();//흰둥이 : 멍멍
 클래스형과 비슷하게 구현할 수 있다.
 리액트 공식 매뉴얼에서는 컴포넌트를 새로 작성 할때는 함수 컴포넌트와 Hooks을 사용하도록 권장하고 있다.
 하지만 그렇다고 해서 클래스형 컴포넌트가 사라지는 것은 아니므로 클래스형 컴포넌트 기능을 알아둬야 함
+
+
+### Props(properties) 컴포넌트 속성을 설정할 때 사용하는 요소
+
+
