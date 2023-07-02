@@ -62,9 +62,22 @@ name이 '리액트' 참 일 때 h1, 아닐때 h2 출력
 name이 '리액트' 참 일 때 h1 출력
 {name === '리액트' && <h1>리액트입니다</h1>}
 
-
 const name = '리액트1'; 문자열이 거짓이기 때문에 출력 되지 않음
 {name === '리액트' && <h1>리액트입니다</h1>}
 
 const number = 0; 숫자 0은 코드에서 false 이기 때문에 숫자 0이 출력 됨
 return <div>{number && <h1>리액트입니다</h1>}</div>;
+
+const name = undefined; undefined 또는 '값이 ~입니다.'
+return name || '값이 undefined입니다.'
+
+
+null = 일부러 비워둔 것
+undefined = 공간은 있으나 빈것(리액트에서는 에러로 침, 기본값이 존재 해야 함)
+대응책
+  const name = undefined;
+  return name || '값이 undefined입니다.'
+
+잘못 된 undefined 처리
+  const name = undefined;
+  return name;
