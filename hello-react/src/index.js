@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // React.StrictMode : 오래된 문법을 사용 시 에러가 나도록 만드는 모드
+  // 실제 배포시 지워야 함 : 문법 검사 목적만 있고, 실제 사용 시 dom 2번 실행 됨으로 불필요 함
   <React.StrictMode>
     <App />
   </React.StrictMode>
