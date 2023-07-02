@@ -27,8 +27,8 @@ import { Fragment } from 'react';
 
   return (
     <>
-      <h1>Hello React </h1>
-      <h2>Hello React </h2>
+      <h1>Hello React</h1>
+      <h2>Hello React</h2>
     </>
   );
 
@@ -87,4 +87,10 @@ undefined = 공간은 있으나 빈것(리액트에서는 에러로 침, 기본�
   function App() {
     const name = undefined;
     return name;
+  }
+
+  JSX 문법에서는 오류가 아님
+  function App() {
+    const name = undefined;
+    return <div>{name || '리액트'}</div>
   }
