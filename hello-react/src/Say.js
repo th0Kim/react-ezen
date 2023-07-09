@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 // 함수형
 
 const Say = () => {
-  const [message, setMassage] = useState('');
+  //message: 현재값, setMassage: 업데이트 할 값
+  //useState('') 작은 따옴표는 string(문자열)
+  const [message, setMassage] = useState(''); //class형에서 state 초기값, 업데이트값을 한 줄로 표현
   const onClickEnter = () => setMassage("hello~");
   const onClickLeave = () => setMassage("bye bye");
 
