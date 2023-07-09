@@ -253,3 +253,9 @@ App.js에서 컴포넌트 안에 일반 텍스트를 적을 경우 컴포넌트.
 
 ### Javascript문법 중요! : destructuring = 구조분해할당
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+
+props 간소화 1 :반복되는 props를 const로 변수로 사용
+const {name, children} = props;
+
+props 간소화 2 :props 자리임으로 자리에 변수를 넣어서 간소화 함
+const MyComponent = ({ name, children }) =>
