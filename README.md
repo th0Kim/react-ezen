@@ -262,3 +262,5 @@ const MyComponent = ({ name, children }) =>
 
 ### Javascript는 제약이 없어서 제한을 둬야 함, type을 지정해서 오류을 최소화 시킬 것
 import PropTypes from 'prop-types';
+name: PropTypes.string
+이렇게 설정해 주면 name값은 무조건 문자열(string) 형태로 전달해야 된다는 것.

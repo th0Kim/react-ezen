@@ -6,7 +6,7 @@ import MyComponent from './MyComponent';
 const App = () => {
   return (
     <div>
-      <MyComponent>
+      <MyComponent name={3}>
         리액트 {/* App의 MyComponent 자식 */}
       </MyComponent>
     </div>

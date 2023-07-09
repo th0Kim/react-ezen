@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';//
+import PropTypes from 'prop-types';//Javascript는 제약
 
 const MyComponent = ({ name, children }) => {
   return (
@@ -11,7 +11,7 @@ const MyComponent = ({ name, children }) => {
   );
 }
 
-// 
+//Javascript는 제약
 MyComponent.propTypes = {
   name: PropTypes.string, // string , number, object ...
 }
