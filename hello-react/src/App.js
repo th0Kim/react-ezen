@@ -3,7 +3,7 @@ import './App.css';
 import React from 'react';
 import MyComponent from './MyComponent'; //함수형 lint 약어 rcc
 import MyComponentC from './MyComponent_c'; //class형 lint 약어 rsc
-import Counter_c from './Counter_c'; // state
+import CounterC from './Counter_c'; // state
 
 const App = () => {
   return (
@@ -19,7 +19,7 @@ const App = () => {
       </MyComponentC>
 
       <h3>Class형 + state(내부에서 바뀔 수 있는 값)</h3>
-      <Counter_c></Counter_c>
+      <CounterC></CounterC>
     </div>
   );
 }
