@@ -371,8 +371,9 @@ hooks은 배열 비구조화 할당으로 되어 있다.
 <MyCompnent onClick={dosomething}/>과 같이 설정했다면
 MyCompnent를 클릭 할 때 dosomething 함수를 실행하는 것이 아닌, 그냥 이름만 onClick인 props를 MyCompnent에 전달해 줄 뿐이다.
 다만, 전달 받은 props를 컴포넌트 내부의 DOM이벤트로 설정 할 수는 있다.
+```
 <div onClick={this.props.onClick}>
 {/* (...) */}
 </div>
-
+```
 SyntheticBaseEvent : 초기화를 하고 이벤트 발생한 시점의 값을 가져옴 
