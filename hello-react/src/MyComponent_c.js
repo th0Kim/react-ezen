@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';//Javascript는 제약
 
 class MyComponent_c extends Component {
   render() {
+    // class형은 props ()가 없어서 구조분해할당 방법으로 const 작성 해야 함
     const {name, children, favoriteNumber} = this.props;
-    // 구조분해할당 작성 영역
     return (
       <div>
         {name} 컴포넌트
