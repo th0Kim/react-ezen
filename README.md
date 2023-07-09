@@ -281,22 +281,72 @@ favoriteNumber : PropTypes.number.isRequired
 함수형 컴포넌트에서 useState라는 함수를 통해 사용하는 state
 prevState : 기존 상태
 props : 현재 지니고 있는 props를 가르킨다
+callbak함수 : 함수 실행 후 추가 함수 실행
 
 ##### state 주의 사항 :
 클래스형 컴포넌트든 함수 컴포넌트든 state를 사용할 때 주의 해야 할 상입니다.
 state 값을 바꿔야 할 때는 setState 혹은 useState를 통해 전달 받은 세터 함수를 사용해야 한다.
 
+immutable : 처음에 생성된 값을 변경 되면 안된다는 불변객체(리액트 안에서 불변성의 규칙)
+해결 방법 : 기존값을 사본을 새롭게 만들어 변경해 사용 
+
 예) 클래스 컴포넌트 잘못 된 코드
-this.state.number = this.state.number + 1;
-this.state.array = this.array.push(2);
-this.stae.object.value = 5;
+  1) this.state.number 사용하여 직접적으로 처음값에 접근하여 값 변경 X
+  this.state.number = this.state.number + 1;
+
+  2) push함수 사용하여 처음값에 직접적으로 접근하여 값 변경 X
+  this.state.array = this.array.push(2);
+
+  3) 처음값에 직접적으로 접근하여 값 변경 X
+  this.stae.object.value = 5;
+
+  예) 수정 된 코드 : 
+  1) ...object로 복사해서 새로운 연산자를 만든다
+  const object = {a:1, b:2, c:3};
+  const nexObj = {...object, b:4};//...: rest 연산자
+  console.log(nexObj); // a: 1, b: 4, c: 3
+  console.log(object); // a: 1, b: 2, c: 3
+
+  2) .push/.delete 대신 .concat/.filter를 사용해서 새로운 array사본으로 key:value을 추가/빼기 한다.
+  const array = [
+    {id:1, value:true},
+    {id:2, value:true},
+    {id:3, value:false},
+  ]
+  const nextArray = array.concat({id:4, value:true});// array를 새로 복사하고 key:value 추가해서 출력
+  const nextArray1 = nextArray.filter(item => item.id !== 3);// nextArray를 새로 복사하고 id가 3인 것만 빼고 출력
+  let nextArray2 = nextArray1.map(item => (item.id === 1) ? {...item, value:false} : item); // id가 1이면 ...item으로 복사하고 id 1의 value를 false로 바꿔서 출력 한다.
+  console.log(array);
+  console.log(nextArray);
+  console.log(nextArray1);
+  console.log(nextArray2);
+
 
 예) 함수 컴포넌트 잘못 된 코드
 const [object, setObject] = useState({a:1, b:2});
 object.b = 3;
 
 
-callbak함수 : 함수 실행 후 추가 함수 실행
+### Javascript문법 중요! : Arguments 객채 (rest 연산자, 스프레드 연산자)
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/arguments
+var args = Array.from(arguments);
+var args = [...arguments]; //배열 객체
+
+
+### Javascript문법 중요! : Array.prototype.filter() 새로운 배열로 반환
+Array.prototype 복사해서 filter를 쓸 수 있다. Array 객체 아니면 사용 X
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+
+### Javascript문법 중요! : Array.prototype.map()
+함수를 호출한 결과를 모아 새로운 배열을 반환
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
+### Javascript문법 중요! : 조건식
+if(조건식){true}else{false}
+위 아래 같음
+조건식 ? true : false
+
+#### Array CRUD - 생성, 읽기, 수정, 삭제
 
 #### 구조화
 const array = [1,2];
