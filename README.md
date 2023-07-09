@@ -375,4 +375,4 @@ MyCompnent를 클릭 할 때 dosomething 함수를 실행하는 것이 아닌, �
 {/* (...) */}
 </div>
 
-SyntheticBaseEvent : 초기화를 하고 이벤트 발생한 시점의 값을 가져옴
+SyntheticBaseEvent : 초기화를 하고 이벤트 발생한 시점의 값을 가져옴 

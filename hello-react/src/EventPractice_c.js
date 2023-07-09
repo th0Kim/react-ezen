@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 
 class EventPractice_c extends Component {
+  state = {
+    message: '',//변경 하고 싶은 값을 초기화
+  }
   render() {
     return (
       <div>
         <h4>이벤트 연습</h4>
         <input
           type="text"
-          name="massage"
+          name="message"
           placeholder="아무거나 입력해 보세요"
+          value={this.state.message}//초기값 ''
           onChange={(e) => {
-            console.log(e); //SyntheticBaseEvent
+            this.setState({//변경 함수
+              message: e.target.value //input에 입력 한 내용이 value에 입력
+            })
           }}
         />
       </div>
