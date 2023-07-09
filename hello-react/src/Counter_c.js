@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class Counter_c extends Component {
   constructor(props) {
     super(props);
+    // console.log(this)
     this.state = {
       number: 0,
     }
@@ -12,7 +13,7 @@ class Counter_c extends Component {
     const { number } = this.state;
     return (
       <div>
-        <p>{number}</p>
+        <h4>{number}</h4>
         <button onClick={() => {this.setState({ number: number + 1 });}}>
           +1
         </button>
