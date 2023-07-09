@@ -9,7 +9,7 @@ class Counter_c extends Component {
   }
 
   render() {
-    const { number } = this.state; //3. 
+    const { number } = this.state; // 초기값 0
     return (
       <div>
         <h4>{number}</h4>
