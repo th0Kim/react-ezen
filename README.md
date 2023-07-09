@@ -275,3 +275,7 @@ favoriteNumber : PropTypes.number.isRequired
 외부 제약
 내부 제약 static: class형에서만 있는 내부 제약 방법
 
+#### state: 리액트에서 컴포넌트 내부에서 바뀔 수 있는 값
+리액트에서 두 종류의 state가 있다. 하나는 
+클래스형 컴포넌트가 지닌 state,
+함수형 컴포넌트에서 useState라는 함수를 통해 사용하는 state
