@@ -14,8 +14,10 @@ class Counter_c extends Component {
         <h5>바뀌지 않는 값: {fixedNumber}</h5>
         {/* this.setState을 사용해서 값을 변화 시켜준다 */}
         <button onClick={() => {
-          this.setState((prevState) => ({ number: prevState.number + 1 }));//prevState에 값을 저장해서 넘기는 역할
-          this.setState((prevState) => ({ number: prevState.number + 1 }));
+          //this.setState({number: number + 1}); //이전 값 없이 초기값 + 1 만 연산 한다.
+          //prev : 이전 값을 저장 함으로 값을 누적하여 사용 할 수 있다.
+          this.setState((prev) => ({ number: prev.number + 1 }));
+          this.setState((prev) => ({ number: prev.number + 1 }));
           }}>
           +1
         </button>
