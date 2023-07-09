@@ -264,3 +264,6 @@ const MyComponent = ({ name, children }) =>
 import PropTypes from 'prop-types';
 name: PropTypes.string
 이렇게 설정해 주면 name값은 무조건 문자열(string) 형태로 전달해야 된다는 것.
+
+isRequired : 부모에서 컴포넌트에 넘길 props 필수 입력 값
+favoriteNumber : PropTypes.number.isRequired
