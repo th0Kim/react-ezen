@@ -13,6 +13,8 @@ const MyComponent = ({ name, children, favoriteNumber }) => {
   );
 }
 
+//MyComponent 외부 제약
+
 //Javascript는 제약
 MyComponent.propTypes = {
   name: PropTypes.string, // string , number, object ...

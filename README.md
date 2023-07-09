@@ -267,3 +267,11 @@ name: PropTypes.string
 
 isRequired : 부모에서 컴포넌트에 넘길 props 필수 입력 값
 favoriteNumber : PropTypes.number.isRequired
+
+
+### component class형 제약 방법
+외부 제약
+내부 제약 static: class형에서만 있는 내부 제약 방법
+
+### component 함수형 제약 방법
+외부 제약 MyComponent.js > MyComponent.propTypes , MyComponent.defaultProps 참고
