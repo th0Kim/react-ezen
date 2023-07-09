@@ -248,3 +248,4 @@ whiteDog.bark();//흰둥이 : 멍멍
 .defaultProps
 
 App.js에서 컴포넌트 안에 일반 텍스트를 적을 경우 컴포넌트.js에 {props.children} 사용하여 출력 할 수 있음 
+부모(App)의 MyComponent에 name이 없고 자식을 출력 {props.children}

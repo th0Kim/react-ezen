@@ -6,7 +6,9 @@ import MyComponent from './MyComponent';
 const App = () => {
   return (
     <div>
-      <MyComponent>리액트</MyComponent>
+      <MyComponent>
+        리액트 {/* App의 MyComponent 자식 */}
+      </MyComponent>
     </div>
   );
 }
