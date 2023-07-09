@@ -1,14 +1,14 @@
 import './App.css';
 
 import React from 'react';
-import MyComponent from './MyComponent';
+import MyComponentC from './MyComponent_c';
 
 const App = () => {
   return (
     <div>
-      <MyComponent name={'react'} favoriteNumber={1}>
-        리액트 {/* App의 MyComponent 자식 */}
-      </MyComponent>
+      <MyComponentC name={'react'} favoriteNumber={1}>
+        리액트 {/* App의 MyComponentC 자식 */}
+      </MyComponentC>
     </div>
   );
 }
