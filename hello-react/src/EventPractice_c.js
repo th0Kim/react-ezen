@@ -19,6 +19,13 @@ class EventPractice_c extends Component {
             })
           }}
         />
+        <button
+          onClick={() => {
+            alert(this.state.message);
+            this.setState({
+              message: '',//alert 띄우고 value 초기화 됨
+            });
+          }}>확인</button>
       </div>
     );
   }
