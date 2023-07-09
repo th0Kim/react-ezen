@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';//Javascript는 제약
 
-const MyComponent = ({ name, children, favoriteNumber, }) => {
+const MyComponent = ({ name, children, favoriteNumber }) => {
   return (
     <div>
       {name} 컴포넌트
