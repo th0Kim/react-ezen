@@ -4,6 +4,7 @@ import React from 'react';
 import MyComponent from './MyComponent'; //함수형 lint 약어 rcc
 import MyComponentC from './MyComponent_c'; //class형 lint 약어 rsc
 import CounterC from './Counter_c'; // state
+import Say from './Say'; // 
 
 const App = () => {
   return (
@@ -20,6 +21,10 @@ const App = () => {
 
       <h3>Class형 + state(내부에서 바뀔 수 있는 값)</h3>
       <CounterC></CounterC>
+
+      
+      <h3>함수형 + useState</h3>
+      <Say></Say>
     </div>
   );
 }
