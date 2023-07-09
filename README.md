@@ -259,3 +259,6 @@ const {name, children} = props;
 
 props 간소화 2 :props 자리임으로 자리에 변수를 넣어서 간소화 함
 const MyComponent = ({ name, children }) =>
+
+### Javascript는 제약이 없어서 제한을 둬야 함, type을 지정해서 오류을 최소화 시킬 것
+import PropTypes from 'prop-types';
