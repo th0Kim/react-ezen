@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 
 class EventPractice_c extends Component {
-  state = {
-    message: '',//변경 하고 싶은 값을 초기화
+  state = {//변경 하고 싶은 값을 초기화
+    username: '',
+    message: '',
   }
   
   handleChange = (e) => {
     this.setState({
-      message : e.target.value,
+      [e.target.name] : e.target.value,//input의 공통 구분 속성 name 값에 따라 각 value를 변경 해 줌
     })
   }
   
   handleClick = () => {
-    alert(this.state.message);
-    this.setState({
+    alert(this.state.username + this.state.message);
+    this.setState({//초기화
+      username: '',
       message : '',
     })
   }
@@ -22,6 +24,13 @@ class EventPractice_c extends Component {
     return (
       <div>
         <h4>이벤트 연습</h4>
+        <input
+          type="text"
+          name="username"
+          placeholder="사용자명"
+          value={this.state.username}//초기값 ''
+          onChange={this.handleChange}
+        />
         <input
           type="text"
           name="message"
