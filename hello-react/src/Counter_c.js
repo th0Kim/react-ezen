@@ -15,6 +15,10 @@ class Counter_c extends Component {
         <button onClick={() => {
           //this.setState({number: number + 1});
           // this.setState((prev) => ({ number: prev.number + 1 }));
+            this.setState({number: number + 1}, () => {//call back 함수
+              console.log('방금 setState가 호출 되었습니다');
+              console.log(this.setState);
+            })
           }}>
           +1
         </button>

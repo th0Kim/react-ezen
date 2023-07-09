@@ -281,3 +281,5 @@ favoriteNumber : PropTypes.number.isRequired
 함수형 컴포넌트에서 useState라는 함수를 통해 사용하는 state
 prevState : 기존 상태
 props : 현재 지니고 있는 props를 가르킨다
+
+callbak함수 : 함수 실행 후 추가 함수 실행
