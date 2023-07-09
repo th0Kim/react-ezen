@@ -4,6 +4,8 @@ const MyComponent = (props) => {
   return (
     <div>
       {props.name} 컴포넌트
+      <br />
+      children 값은 {props.children}
     </div>
   );
 }
