@@ -27,7 +27,6 @@ const App = () => {
       <h3>함수형 + useState</h3>
       <Say></Say>
 
-      <h3>이벤트 연습</h3>
       <EventPracticeC></EventPracticeC>
     </div>
   );
