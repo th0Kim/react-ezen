@@ -292,3 +292,7 @@ const two = array[0];//2
 #### 비구조화
 const array = [1,2];
 const [one,two] = array;
+
+#### hooks
+클래스형에서 아주 잘 만들어 놓은 함수를 함수 컴포넌트에서 hooks라고 한다.
+hooks은 배열 비구조화 할당으로 되어 있다.
