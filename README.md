@@ -279,3 +279,5 @@ favoriteNumber : PropTypes.number.isRequired
 리액트에서 두 종류의 state가 있다. 하나는 
 클래스형 컴포넌트가 지닌 state,
 함수형 컴포넌트에서 useState라는 함수를 통해 사용하는 state
+prevState : 기존 상태
+props : 현재 지니고 있는 props를 가르킨다
