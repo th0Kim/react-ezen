@@ -2,10 +2,15 @@
 
 ### yarn : npm을 대체하는 패키지 관리자 도구 - npm은 프로젝트 버젼을 맞춰줘야 하는 단점
 
+
 [설치]
+```
 npm install -global yarn
+```
 [설치 완료 확인]
+```
 yarn -v
+```
 
 ### git bash : mac/window에서 통합으로 사용 가능
 
@@ -22,7 +27,7 @@ yarn create react-app 프로젝트이름
 3. 시스템 변수 Path > 편집 > 새로 만들기 > 위 복사한 npm path에 마지막에 \ 넣고 저장
 
 ### React 표기법
-
+```
 import 변수이름 form '연결 할 패키지';
 class => className
 {}중괄호는 변수를 넣을 때 씀
@@ -37,17 +42,19 @@ return (
 <h2>Hello React</h2>
 </>
 );
-
-==
+```
 
 내용이 한 줄 일 때 표기
+```
 return <><h1>Hello React </h1></>
+```
 
 ### js 테스트 사이트
 
 https://jsbin.com/?html,output
 
 es6 문법
+```
 const : 변 할 수 없는 변수 (이미 선언한 변수를 재정의 못함)
 let : 변 할 수 있는 변수
 function myFunc(){
@@ -61,9 +68,10 @@ let a = "hello";
 
 }
 myFunc();
+```
 
 ### 조건부 연산자
-
+```
 name이 '리액트' 참 일 때 h1, 아닐때 h2 출력
 {name === '리액트' ? <h1>리액트입니다</h1> : <h2>리액트가 아닙니다.</h2>}
 
@@ -85,41 +93,51 @@ Boolean , typeof 확인 방법
 let a;
 console.log(Boolean(a)); //false
 console.log(typeof a); //undefined
+```
 
 리액트 컴포넌트에서는 함수에서 undefined만 반환하여 렌더링하면 안된다.
 만약 undefined이 꼭 필요한 경우 ||연산자를 사용하여 undefined 일때 사용할 값을 지정해 오류를 방지할 수 있다.
 오류 방지 대응방법 1
+```
 function App() {
-const name = undefined;
-return name || '값이 undefined입니다.';
+  const name = undefined;
+  return name || '값이 undefined입니다.';
 }
+```
 
 오류 방지 대응방법 2
+```
 function App() {
-const name = undefined;
-return <div>{name || '리액트'}</div>;
+  const name = undefined;
+  return <div>{name || '리액트'}</div>;
 }
+```
 
 JSX 문법에서는 오류가 아님
+```
 function App() {
-const name = undefined;
-return <div>{name || '리액트'}</div>
+  const name = undefined;
+  return <div>{name || '리액트'}</div>
 }
+```
 
 잘못 된 undefined 처리 예시
+```
 function App() {
-const name = undefined;
-return name;
+  const name = undefined;
+  return name;
 }
+```
 
 ### 꼭 닫아야 하는 태그(self closing)
-
+```
 <input />
+```
 
 ### .prettierrc
 
 https://prettier.io/docs/en/options.html
-
+```
 {
 "dubleQuote": true, // 큰 따옴표 택 1
 "singleQuote": true, // 작은 따옴표 택 1
@@ -127,6 +145,7 @@ https://prettier.io/docs/en/options.html
 "useTabs": false, //탭키 사용 여부
 "tabWidth": 2 //탭 간격 2
 }
+```
 
 settins가서
 default formatter > prettier code format 변경
@@ -134,6 +153,7 @@ format on save > 체크
 
 
 ### RCC
+```
 import React, { Component } from 'react';
 
 class App extends Component {
@@ -144,8 +164,10 @@ class App extends Component {
 }
 
 export default App;
+```
 
 ### RSC
+```
 import React from 'react';
 
 const MyComponent = () => {
@@ -157,8 +179,10 @@ const MyComponent = () => {
 };
 
 export default MyComponent;
+```
 
 ### Javascript의 인스턴스(Instance) ES5 : prototype
+```
 function Dog(name) {
   this.name = name;
 }
@@ -169,8 +193,10 @@ Dog.prototype.say = function(){
 
 const dog = new Dog('흰둥이');
 dog.say();
+```
 
 ### Javascript의 인스턴스(Instance) ES6 : class
+```
 class Dog{
   constructor(name){
     this.name = name;
@@ -187,11 +213,13 @@ const dog = new Dog('바둑이');
 const boy = new Dog('귀염둥이');
 dog.say();
 boy.cute();
+```
 
 
 ### Javascript의 인스턴스(Instance) 
 ### function(){} , ()=> 차이
 일반함수는 자신이 종속된 객체를 this로 가르키고 화살표함수는 자신이 종속된 인스턴스(new로 선언된)을 가르킨다.
+```
 function BlackDog(){
   this.name = '흰둥이';
   return {
@@ -204,8 +232,10 @@ function BlackDog(){
 }
 const blackDog = new BlackDog();//new : Instance
 blackDog.bark();//검둥이 : 멍멍
+```
 
 ====> 보안상 일반 function은 window에 접근에 문제가 있어서 ()=> 함수가 나옴
+```
 function BlackDog(){
   this.name = '흰둥이';
   return {
@@ -218,16 +248,17 @@ function BlackDog(){
 }
 const whiteDog = new BlackDog();//new : Instance
 whiteDog.bark();//흰둥이 : 멍멍
-
+```
 일반함수 
 
 
 // React.StrictMode : 오래된 문법을 사용 시 에러가 나도록 만드는 모드
 // 실제 배포시 지워야 함 : 문법 검사 목적만 있고, 실제 사용 시 dom 2번 실행 됨으로 불필요 함
+```
 <React.StrictMode>
   <App />
 </React.StrictMode>
-
+```
 
 ### 리액트 v16.8
 함수 컴포넌트의 단점은 state와 라이프사이클 API의 사용이 불가능하다는 점인데 
@@ -292,22 +323,31 @@ immutable : 처음에 생성된 값을 변경 되면 안된다는 불변객체(�
 
 예) 클래스 컴포넌트 잘못 된 코드
   1) this.state.number 사용하여 직접적으로 처음값에 접근하여 값 변경 X
+  ```
   this.state.number = this.state.number + 1;
+  ```
 
   2) push함수 사용하여 처음값에 직접적으로 접근하여 값 변경 X
+  ```
   this.state.array = this.array.push(2);
+  ```
 
   3) 처음값에 직접적으로 접근하여 값 변경 X
+  ```
   this.stae.object.value = 5;
+  ```
 
   예) 수정 된 코드 : 
   1) ...object로 복사해서 새로운 연산자를 만든다
+  ```
   const object = {a:1, b:2, c:3};
   const nexObj = {...object, b:4};//...: rest 연산자
   console.log(nexObj); // a: 1, b: 4, c: 3
   console.log(object); // a: 1, b: 2, c: 3
+  ```
 
   2) .push/.delete 대신 .concat/.filter를 사용해서 새로운 array사본으로 key:value을 추가/빼기 한다.
+  ```
   const array = [
     {id:1, value:true},
     {id:2, value:true},
@@ -320,12 +360,14 @@ immutable : 처음에 생성된 값을 변경 되면 안된다는 불변객체(�
   console.log(nextArray);
   console.log(nextArray1);
   console.log(nextArray2);
+  ```
 
 
 예) 함수 컴포넌트 잘못 된 코드
+```
 const [object, setObject] = useState({a:1, b:2});
 object.b = 3;
-
+```
 
 ### Javascript문법 중요! : Arguments 객채 (rest 연산자, 스프레드 연산자)
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/arguments
