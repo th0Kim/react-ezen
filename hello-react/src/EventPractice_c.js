@@ -4,6 +4,20 @@ class EventPractice_c extends Component {
   state = {
     message: '',//변경 하고 싶은 값을 초기화
   }
+  
+  handleChange = (e) => {
+    this.setState({
+      message : e.target.value,
+    })
+  }
+  
+  handleClick = () => {
+    alert(this.state.message);
+    this.setState({
+      message : '',
+    })
+  }
+
   render() {
     return (
       <div>
@@ -13,19 +27,10 @@ class EventPractice_c extends Component {
           name="message"
           placeholder="아무거나 입력해 보세요"
           value={this.state.message}//초기값 ''
-          onChange={(e) => {
-            this.setState({//변경 함수
-              message: e.target.value //input에 입력 한 내용이 value에 입력
-            })
-          }}
+          onChange={this.handleChange}
         />
         <button
-          onClick={() => {
-            alert(this.state.message);
-            this.setState({
-              message: '',//alert 띄우고 value 초기화 됨
-            });
-          }}>확인</button>
+          onClick={this.handleClick}>확인</button>
       </div>
     );
   }
