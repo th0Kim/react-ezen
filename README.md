@@ -282,6 +282,20 @@ favoriteNumber : PropTypes.number.isRequired
 prevState : 기존 상태
 props : 현재 지니고 있는 props를 가르킨다
 
+##### state 주의 사항 :
+클래스형 컴포넌트든 함수 컴포넌트든 state를 사용할 때 주의 해야 할 상입니다.
+state 값을 바꿔야 할 때는 setState 혹은 useState를 통해 전달 받은 세터 함수를 사용해야 한다.
+
+예) 클래스 컴포넌트 잘못 된 코드
+this.state.number = this.state.number + 1;
+this.state.array = this.array.push(2);
+this.stae.object.value = 5;
+
+예) 함수 컴포넌트 잘못 된 코드
+const [object, setObject] = useState({a:1, b:2});
+object.b = 3;
+
+
 callbak함수 : 함수 실행 후 추가 함수 실행
 
 #### 구조화
