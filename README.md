@@ -360,3 +360,17 @@ const [one,two] = array;
 #### hooks
 클래스형에서 아주 잘 만들어 놓은 함수를 함수 컴포넌트에서 hooks라고 한다.
 hooks은 배열 비구조화 할당으로 되어 있다.
+
+## 이벤트 핸들링
+### 이벤트를 사용할 때 주의 사항
+1. 이벤트 이름은 카멜 표기법으로 작성한다(onclick을 리액트에서 onClick으로 작성)
+2. 이벤트에 실행 할 자바스크립트 코드를 전달 하는 것이 아니라 함수 형태의 값을 전달한다.
+3. DOM 요소에만 이벤트를 설정 할 수 있다.
+(즉, div button input form span 등의 DOM요소에는 이벤트를 설정 할 수 있지만 우리가 직접 만든 컴포넌트에는 자체적으로 설정 할 수 없다.)
+예)
+<MyCompnent onClick={dosomething}/>과 같이 설정했다면
+MyCompnent를 클릭 할 때 dosomething 함수를 실행하는 것이 아닌, 그냥 이름만 onClick인 props를 MyCompnent에 전달해 줄 뿐이다.
+다만, 전달 받은 props를 컴포넌트 내부의 DOM이벤트로 설정 할 수는 있다.
+<div onClick={this.props.onClick}>
+{/* (...) */}
+</div>
