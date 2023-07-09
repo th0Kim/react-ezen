@@ -219,6 +219,14 @@ function BlackDog(){
 const whiteDog = new BlackDog();//new : Instance
 whiteDog.bark();//흰둥이 : 멍멍
 
+일반함수 
+
+
+// React.StrictMode : 오래된 문법을 사용 시 에러가 나도록 만드는 모드
+// 실제 배포시 지워야 함 : 문법 검사 목적만 있고, 실제 사용 시 dom 2번 실행 됨으로 불필요 함
+<React.StrictMode>
+  <App />
+</React.StrictMode>
 
 
 ### 리액트 v16.8
@@ -232,3 +240,9 @@ whiteDog.bark();//흰둥이 : 멍멍
 ### Props(properties) 컴포넌트 속성을 설정할 때 사용하는 요소
 
 
+
+------
+
+# 20230709
+부모(App)에서 props 값을 받아올게 없는 경우 기본값 설정
+.defaultProps
