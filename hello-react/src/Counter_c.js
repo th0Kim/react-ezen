@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 
 class Counter_c extends Component {
-  constructor(props) {
-    super(props);//1. 부모로 부터 props 속성 값을 상속을 받아서
-    this.state = { //2. 그 중에 this.state를 변화 시켜줄거고
-      number: 0,//3. number만 변화를 주기 위한 초기값을 준다. 
-      fixedNumber: 0,
-    }
+  state = { //1. 부모로 부터 props 속성 값을 상속을 받아서 아래 나오는 애들 변화 해줄 거임
+    number: 0,//2. number만 변화를 주기 위한 초기값을 준다. 
+    fixedNumber: 0,
   }
 
   render() {
@@ -15,7 +12,7 @@ class Counter_c extends Component {
       <div>
         <h4>{number}</h4>
         <h5>바뀌지 않는 값: {fixedNumber}</h5>
-        <button onClick={() => {this.setState({ number: number + 1 });}}>{/* 4. this.setState 변화 함수 사용 시 초기값이 필요하여 number를 0으로 this.state로 초기값 선언 */}
+        <button onClick={() => {this.setState({ number: number + 1 });}}>{/* 3. this.setState 변화 함수 사용 시 초기값이 필요하여 number를 0으로 this.state로 초기값 선언 */}
           +1
         </button>
       </div>
