@@ -19,12 +19,16 @@ class ValidationSample_c extends Component {
       clicked: true,//클릭 했으니 true로 변경되어 this.state.validated 구문 확인
       validated: this.state.password === '0000',
     })
+
+    //콜백 함수
+    this.aaa.focus();// ref가 aaa이름을 갖는 곳에(=id와 비슷) 포커스 실행(커서 깜빡임)
   }
 
   render() {
     return (
       <div>
-        <input
+        <input 
+          ref={(refa) => (this.aaa = refa)}// input ref이름이 aaa
           type="password"
           value={this.state.password}//handleChange 의해 값이 변경 된다.
           onChange={this.handleChange}
