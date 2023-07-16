@@ -492,3 +492,5 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
 ----- End Hello-react
 
 ## Hooks (v16.8 이후) : 리액트 내장함수 use~
+  1. useState : 상태 관리의 가장 기본적인 hook
+  
