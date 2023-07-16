@@ -494,3 +494,6 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
 ## Hooks (v16.8 이후) : 리액트 내장함수 use~
   1. useState : 상태 관리의 가장 기본적인 hook 
   -> 하나의 상태값만 관리 할 수 있다. 관리 할 상태가 여러개라면 useState를 여러번 사용한다.
+
+  2. useEffect : 리액트 컴포넌크가 랜더링 될 때 마다 특정 작업을 수행 하도록 설정 할 수 있는 hook
+  -> 클래스형 컴포넌트의 componentDidMount와 componentDidUpate를 합친 형태로 봐도 무방하다.
