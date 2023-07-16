@@ -446,5 +446,5 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
   ### ref를 사용하는 방법 두가지
   1. 콜백함수를 통한 ref 설정
   ```
-  <input ref={(reft) => {this.input=ref}} />
+  <input ref={(ref) => {this.input=ref}} />
   ```

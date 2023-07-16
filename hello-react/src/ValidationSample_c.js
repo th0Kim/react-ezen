@@ -21,14 +21,14 @@ class ValidationSample_c extends Component {
     })
 
     //콜백 함수
-    this.aaa.focus();// ref가 aaa이름을 갖는 곳에(=id와 비슷) 포커스 실행(커서 깜빡임)
+    this.refnaming.focus();// ref가 refnaming 갖는 곳에(=id와 비슷) 포커스 실행(커서 깜빡임)
   }
 
   render() {
     return (
       <div>
         <input 
-          ref={(refa) => (this.aaa = refa)}// input ref이름이 aaa
+          ref={(refnamed) => (this.refnaming = refnamed)}// input ref이름이 refnaming
           type="password"
           value={this.state.password}//handleChange 의해 값이 변경 된다.
           onChange={this.handleChange}
