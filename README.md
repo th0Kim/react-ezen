@@ -448,3 +448,5 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
   ```
   <input ref={(ref) => {this.input=ref}} />
   ```
+  2. creatRef(v16.3 도입으로 이전버전에서 작동하지 않음)
+  ref를 설정해 준 DOM에 접근하려면 this.refnaming.current를 조회하면 된다. 콜백함수와 다른점은 뒷 부분에 .current를 넣어야 한다는 점.

@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 
 class RefSample extends Component {
-  input = React.createRef();
+  refnaming = React.createRef();
+
+  handleFocus = () => {
+    this.refnaming.current.focus();
+  }
 
   render() {
     return (
       <div>
-        <input ref={(this.input)} />
+        <input ref={(this.refnaming)} />
       </div> 
     );
   }
