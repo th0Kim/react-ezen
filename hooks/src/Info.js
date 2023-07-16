@@ -1,8 +1,18 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 const Info = () => {
-	const [name, setName] = useState('');//이름 상태 관리
-	const [nickName, setNickName] = useState('');//닉네임 상태 관리
+	//생성자
+	const [name, setName] = useState('');
+	const [nickName, setNickName] = useState('');
+
+	useEffect(() => {
+		console.log(`랜더링이 완료되었습니다.`);
+		console.log({
+			name,
+			nickName
+		});
+	});
+
 
 	const onChangeName = (e) => {
 		setName(e.target.value);

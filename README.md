@@ -500,3 +500,11 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
   [리액트 라이프 사이클 - 생명주기: 시작 > 업데이트 > 제거]
   componentDidMount : 시작하다
   componentDidUpate : 업데이트
+
+  ```
+  // (1) 시작 할 때와 업데이트 할 때 처리
+	useEffect(() => {
+		console.log({name, nickName});
+	});
+  
+  ```
