@@ -1,15 +1,16 @@
 import React, {useState } from 'react';
 
 const EventPractice = () => {
-  const [ form, setForm ] = useState({
+  const [ form, setForm ] = useState({// useState는 배열로 받음
     username: '',
     message: '',
   })
   
-  const { username, message } = form;
+  const { username, message } = form;// 비구조할당문
+
   const onChange = e => {
     const nextForm = {
-      ...form,
+      ...form,//rest연산사 : object를 새롭게 복사해 와서 새로운 객체로 사용
       [e.target.name]: e.target.value
     };
     setForm(nextForm);
