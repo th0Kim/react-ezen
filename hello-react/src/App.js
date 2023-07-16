@@ -21,17 +21,17 @@ const App = () => {
         리액트 {/* App의 MyComponentC 자식 */}
       </MyComponentC>
 
+
       <h3>Class형 + state(내부에서 바뀔 수 있는 값)</h3>
       <CounterC></CounterC>
-
       
       <h3>함수형 + useState</h3>
       <Say></Say>
 
+
       <h3>Class형 + Event</h3>
       <EventPracticeC></EventPracticeC>
 
-      
       <h3>함수형 + Event</h3>
       <EventPractice></EventPractice>
     </div>
