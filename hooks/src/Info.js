@@ -11,7 +11,7 @@ const Info = () => {
 			name,
 			nickName
 		});
-	});
+	}, [name]);
 
 
 	const onChangeName = (e) => {

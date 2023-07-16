@@ -512,4 +512,8 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
 		console.log({name, nickName});
 	}, []);
   
+  // (3) 업데이트 할 때 처리 : 특정 값만 업데이트 될 때 실행
+	useEffect(() => {
+		console.log({name, nickName});
+	}, [name]);
   ```
