@@ -497,3 +497,6 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
 
   2. useEffect : 리액트 컴포넌크가 랜더링 될 때 마다 특정 작업을 수행 하도록 설정 할 수 있는 hook
   -> 클래스형 컴포넌트의 componentDidMount와 componentDidUpate를 합친 형태로 봐도 무방하다.
+  [리액트 라이프 사이클 - 생명주기: 시작 > 업데이트 > 제거]
+  componentDidMount : 시작하다
+  componentDidUpate : 업데이트
