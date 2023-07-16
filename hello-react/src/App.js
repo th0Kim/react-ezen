@@ -10,6 +10,7 @@ import EventPractice from './EventPractice'; // 이벤트 핸들링
 import ValidationSampleC from './ValidationSample_c'; // ref 예시
 import RefSample from './RefSample'; // ref 예시
 import ScrollBoxC from './ScrollBox_c'; // Component scroll 접근 ref 예시
+import IterationSample from './IterationSample'; // 함수형 반복 예시
 
 const App = () => {
   return (
@@ -53,7 +54,8 @@ const App = () => {
        */}
       <button onClick={() => this.ScrollBoxC.scrollTopBottom()}>맨 밑으로</button>
 
-      
+      <h3>함수형 + 반복</h3>
+      <IterationSample></IterationSample>
     </div>
   );
 }

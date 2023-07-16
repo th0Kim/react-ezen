@@ -468,5 +468,19 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
     scrollTop : 세로 스크롤바 위치(0~350)
     scrollHeight : 스크롤이 있는 박스 안의 div 높이(650)
     clientHeight : 스크롤이 있는 박스의 높이(300)
-    
+
     scrollHeight - clientHeight = scrollTop
+
+
+### 반복 시키기 .map
+  ```
+  const numbers = [1,2,3,4,5];
+  const processed = numbers.map(function(num) {
+    return num * num;
+  })
+  // 화살표 함수 사용 시 코드
+  // const processed = numbers.map(num => num * num);
+
+  console.log(processed);
+  console.log(numbers);
+  ```
