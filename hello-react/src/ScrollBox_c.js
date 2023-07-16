@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class ScrollBox_c extends Component {
-	scrollToBottom = () => {
+	scrollTopBottom = () => {
 		const { scrollHeight, clientHeight } = this.box;
 		// 위 비구조할당문을 풀어 쓴 것
 		// const scrollHeight = this.box.scrollHeight;
