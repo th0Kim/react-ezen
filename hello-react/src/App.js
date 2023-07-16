@@ -8,8 +8,8 @@ class App extends Component {
     return(
       <div>
         <h3>Component + ref + 스크롤 박스 조작</h3>
-        <ScrollBoxC ref={(ref) => (this.ScrollBoxC = ref)}/>   
-        <button onClick={() => this.ScrollBoxC.scrollTopBottom()}>맨 밑으로</button>
+        <ScrollBoxC ref={(ref) => (this.sc = ref)}/>
+        <button onClick={() => this.sc.scrollTopBottom()}>맨 밑으로</button>
       </div>
     )
   }
