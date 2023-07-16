@@ -43,7 +43,7 @@ class EventPractice_c extends Component {
           placeholder="아무거나 입력해 보세요"
           value={this.state.message}//초기값 ''
           onChange={this.handleChange}
-          onKeyPress={this.handleKeyPress}//input에 입력 후 엔터를 눌렀을 UI/UX 시각에서 "확인"버튼을 눌렀을 때와 동일한 동작이 되어야 함.
+          onKeyDown={this.handleKeyPress}//input에 입력 후 엔터를 눌렀을 UI/UX 시각에서 "확인"버튼을 눌렀을 때와 동일한 동작이 되어야 함.
         />
         <button
           onClick={this.handleClick}>확인</button>
