@@ -6,6 +6,7 @@ import MyComponentC from './MyComponent_c'; //class형 lint 약어 rsc
 import CounterC from './Counter_c'; // state
 import Say from './Say'; // useState
 import EventPracticeC from './EventPractice_c'; // 이벤트 핸들링
+import EventPractice from './EventPractice'; // 이벤트 핸들링
 
 const App = () => {
   return (
@@ -27,7 +28,12 @@ const App = () => {
       <h3>함수형 + useState</h3>
       <Say></Say>
 
+      <h3>Class형 + Event</h3>
       <EventPracticeC></EventPracticeC>
+
+      
+      <h3>함수형 + Event</h3>
+      <EventPractice></EventPractice>
     </div>
   );
 }
