@@ -443,10 +443,25 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
 1. 특정 input에 포커스 주기
 2. 스크롤 박스 조작하기
 
-  ### ref를 사용하는 방법 두가지
-  1. 콜백함수를 통한 ref 설정
-  ```
-  <input ref={(ref) => {this.input=ref}} />
-  ```
-  2. creatRef(v16.3 도입으로 이전버전에서 작동하지 않음)
-  ref를 설정해 준 DOM에 접근하려면 this.refnaming.current를 조회하면 된다. 콜백함수와 다른점은 뒷 부분에 .current를 넣어야 한다는 점.
+  1. 특정 input에 포커스 주기
+    ### ref를 사용하는 방법 두가지
+    1. 콜백함수를 통한 ref 설정
+    ```
+    <input ref={(ref) => {this.input=ref}} />
+    ```
+    2. creatRef(v16.3 도입으로 이전버전에서 작동하지 않음)
+    ref를 설정해 준 DOM에 접근하려면 this.refnaming.current를 조회하면 된다. 콜백함수와 다른점은 뒷 부분에 .current를 넣어야 한다는 점.
+
+    ### 
+
+  2. 스크롤 박스 조작하기
+    #### 리액트에서는 컴포넌트에도 ref를 달 수 있다.
+    이 방법은 주로 컴포넌트 내부에 있는 dom을 컴포넌트 외부에서 사용 할 때 쓴다.
+    ```
+    <MyComponent ref={(ref) => {this.Mycomponent = ref}}>
+    ```
+    이렇게 하면 MyComponent 내부의 메서드 및 멤버 변수에도 접근 할 수 있다.
+      ex) 
+        MyComponent.input
+        MyComponent.handleClick
+    

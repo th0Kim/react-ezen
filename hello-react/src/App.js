@@ -9,6 +9,7 @@ import EventPracticeC from './EventPractice_c'; // 이벤트 핸들링
 import EventPractice from './EventPractice'; // 이벤트 핸들링
 import ValidationSampleC from './ValidationSample_c'; // ref 예시
 import RefSample from './RefSample'; // ref 예시
+import ScrollBoxC from './ScrollBox_c'; // Component scroll 접근 ref 예시
 
 const App = () => {
   return (
@@ -38,11 +39,15 @@ const App = () => {
       <EventPractice></EventPractice>
 
 
-      <h3>Class형 + ValidationSamle + ref</h3>
+      <h3>ref + ValidationSample + createRef</h3>
       <ValidationSampleC></ValidationSampleC>
       
-      <h3>함수형 + ref</h3>
+      <h3>ref + createRef</h3>
       <RefSample></RefSample>
+
+      
+      <h3>Component + ref + 스크롤 박스 조작</h3>
+      <ScrollBoxC></ScrollBoxC>
     </div>
   );
 }
