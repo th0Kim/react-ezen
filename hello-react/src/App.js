@@ -48,6 +48,12 @@ const App = () => {
       
       <h3>Component + ref + 스크롤 박스 조작</h3>
       <ScrollBoxC></ScrollBoxC>
+      {/* 
+      <ScrollBoxC ref={(ref) => (this.ScrollBoxC = ref)}/>
+       */}
+      <button onClick={() => this.ScrollBoxC.scrollTopBottom()}>맨 밑으로</button>
+
+      
     </div>
   );
 }
