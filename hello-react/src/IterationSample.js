@@ -11,7 +11,11 @@ const IterationSample = () => {
 	const [inputText, setInputText] = useState('');
 	const [nextId, setNextId] = useState(5);
 
-	const nameList = names.map((name) => <li key={name.id}>{name.text}</li>);
+	const nameList = names.map((name) => (
+		<li key={name.id} onDoubleClick={() => onRemove(name.id)}>
+			{name.text}
+		</li>
+	));
 
 	const onChange = e => setInputText(e.target.value);
 
@@ -24,6 +28,11 @@ const IterationSample = () => {
 		setNextId(nextId + 1); //추가 할 id가 1씩 증가
 		setNames(nextNames);//추가 할 이름
 		setInputText('');//추가 후 인풋 초기화
+	}
+
+	const onRemove = (id) => {
+		const nextNames = names.filter((name) => name.id !== id);//id 빼기
+		setNames(nextNames);//새로 업데이트
 	}
 	
   const onKeyPress = e => {
