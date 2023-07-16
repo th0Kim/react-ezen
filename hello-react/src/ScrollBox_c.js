@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 
 class ScrollBox_c extends Component {
+	scrollToBottom = () => {
+		const { scrollHeight, clientHeight } = this.box;
+		// 위 비구조할당문을 풀어 쓴 것
+		// const scrollHeight = this.box.scrollHeight;
+		// const clientHeight = this.box.clientHeight;
+
+		this.box.scrollTop = scrollHeight - clientHeight;
+	}
+
+
   render() {
 		const style = {
 			border: '1px solid black',

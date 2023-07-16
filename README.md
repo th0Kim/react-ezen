@@ -464,4 +464,9 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
       ex) 
         MyComponent.input
         MyComponent.handleClick
+
+    scrollTop : 세로 스크롤바 위치(0~350)
+    scrollHeight : 스크롤이 있는 박스 안의 div 높이(650)
+    clientHeight : 스크롤이 있는 박스의 높이(300)
     
+    scrollHeight - clientHeight = scrollTop
