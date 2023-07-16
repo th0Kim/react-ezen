@@ -419,3 +419,13 @@ MyCompnent를 클릭 할 때 dosomething 함수를 실행하는 것이 아닌, �
 </div>
 ```
 SyntheticBaseEvent : 초기화를 하고 이벤트 발생한 시점의 값을 가져옴 
+
+
+
+------
+
+# 20230716
+
+예) onKeyPress={this.handleClik}을 사용 했으나, 이후 리액트 버젼 영향으로 @deprecated 처리가 되었을 때 기능적 결함이 있을 수 있음.
+ctrl + onKeyPress 클릭 시 index.d.ts 파일이 열리는데 여기서 사용 가능한 리액트 이벤트 목록이 열림
+여기서 대체 할 수 있는 onKeyDown={this.handleClick}으로 변경하여 사용 할 수 있다.
