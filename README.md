@@ -216,7 +216,7 @@ boy.cute();
 ```
 
 
-### Javascript의 인스턴스(Instance) 
+### Javascript의 인스턴스(Instance) : 인스턴스는 복사해 온 객체
 ### function(){} , ()=> 차이
 일반함수는 자신이 종속된 객체를 this로 가르키고 화살표함수는 자신이 종속된 인스턴스(new로 선언된)을 가르킨다.
 ```
@@ -429,3 +429,4 @@ SyntheticBaseEvent : 초기화를 하고 이벤트 발생한 시점의 값을 �
 예) onKeyPress={this.handleClik}을 사용 했으나, 이후 리액트 버젼 영향으로 @deprecated 처리가 되었을 때 기능적 결함이 있을 수 있음.
 ctrl + onKeyPress 클릭 시 index.d.ts 파일이 열리는데 여기서 사용 가능한 리액트 이벤트 목록이 열림
 여기서 대체 할 수 있는 onKeyDown={this.handleClick}으로 변경하여 사용 할 수 있다.
+
