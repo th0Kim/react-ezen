@@ -472,7 +472,7 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
     scrollHeight - clientHeight = scrollTop
 
 
-### 반복 시키기 .map
+### 반복 시키기 .map : 사용 시 key값을 필수로 쓸 것(index로 쓰면 안 됨)
   ```
   const numbers = [1,2,3,4,5];
   const processed = numbers.map(function(num) {
