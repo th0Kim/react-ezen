@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './ValidationSample.css'
 
 class ValidationSample_c extends Component {
-  state = {
+  state = {//변화 처리 할 변수의 초기값
     password: '',
     clicked: false,
     validated: false,
@@ -16,7 +16,7 @@ class ValidationSample_c extends Component {
 
   handleButtonClick = () => {
     this.setState({
-      clicked: true,
+      clicked: true,//클릭 했으니 true로 변경되어 this.state.validated 구문 확인
       validated: this.state.password === '0000',
     })
   }
