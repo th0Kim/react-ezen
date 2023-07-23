@@ -8,15 +8,15 @@ const getAverage = (numbers) => {
 }
 
 const Average = () => {
-  const [list, setList] = useState([]);
+  const [list, setList] = useState([]);//초기화: 빈배열
   const [number, setNember] = useState('');
 
   const onChange = (e) => {
     setNember(e.target.value);
   }
-  const onInsert = (e) => {
-    const nextList = list.concat(parseInt(number));
-    setList(nextList);
+  const onInsert = () => {//e객체 사용 안해서 비워도 됨
+    const nextList = list.concat(parseInt(number));// parseInt() 숫자 형태로 변환하고 concat 사용하여 배열 사본 추가
+    setList(nextList);// setList에 새로운 배열 nextList를 업데이트 해줌
     setNember('');
   }
 
