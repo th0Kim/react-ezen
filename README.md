@@ -544,3 +544,20 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
     };
   }, []);
   ```
+
+  ### useReducer : useState보다 더 다양한 컴포넌트 상황에 따라 다양한 상태를 다른 값으로 업데이트 해줄 때
+  ```
+  function reducer(state, action) {
+    return{....} // 불변성을 지키면서 업데이트한 새로운 상태를 반환한다.
+  }
+  ```
+  #### 리듀서는 현재 상태(초기값), 그리고 데이터 수정방법을 위해 필요한 정보를 담은 액션(action)값을 전달받아 새로운 상태를 반환하는 함수(규칙: 새로운 상태를 만들 때는 반드시 불변성을 지켜줘야 한다.)
+  https://www.w3schools.com/react/react_usereducer.asp
+  ```
+  {
+    type: 'INCREMENT', // 다양한 상태 감소/증가 ...
+    // 다른 값들이 필요하다면 추가로 들어감.
+  }
+  ```
+  Javascript 함수 reduce() 비슷비슷
+  https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
