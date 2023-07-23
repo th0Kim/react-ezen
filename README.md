@@ -584,3 +584,5 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
 
   ### useRef(지역변수, DOM에 직접 접근할 수 있는 기능)
   ref를 쉽게 사용할 수 있도록 해준다.
+
+  ### 존재 하는 hook인지 만들어진건지 확인하기 : https://nikgraf.github.io/react-hooks/
