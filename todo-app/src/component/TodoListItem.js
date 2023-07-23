@@ -6,12 +6,14 @@ import {
 import cn from 'classnames';
 import './TodoListItem.scss';
 
-const TodoListItem = () => {
+const TodoListItem = ({ todo }) => {
+  const { text, checked } = todo;
+
   return (
     <div className="TodoListItem">
       <div className="checkbox">
         <MdCheckBoxOutlineBlank />
-        <div className="text">할 일</div>
+        <div className="text">{text}</div>
         <div className="remove">
           <MdRemoveCircleOutline />
         </div>
