@@ -517,3 +517,18 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
 		console.log({name, nickName});
 	}, [name]);
   ```
+
+
+------
+
+# 20230723
+  
+  ```
+  // 업데이트 만 할 수 있는 불편함
+  componentDidUpdate(prevProps, prevState) {
+    if( prevProps.value !== this.props.value ) {
+      doSomthing();
+    }
+  }
+
+  ```
