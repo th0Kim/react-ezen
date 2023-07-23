@@ -11,11 +11,12 @@ function reducer(state, action) {
 const Info = () => {
 	const [state, dispatch] = useReducer(reducer, {
 		myname : '',
-		nickname : ''
+		nickname : '',
+		adress : ''
 	});
 	// [현재상태, 액션 발생시키는 함수] = useReducer(리듀서함수, 해당 리듀서의 기본값);
 
-	const {myname, nickname} = state;//비구조할당문
+	const {myname, nickname, adress} = state;//비구조할당문
 
 	const onChange = (e) => {
 		dispatch(e.target);
@@ -27,10 +28,13 @@ const Info = () => {
 				<input name="myname" value={myname} onChange={onChange} placeholder='이름' />
 				<br/>
 				<input  name="nickname" value={nickname} onChange={onChange} placeholder='닉네임' />
+				<br/>
+				<input  name="adress" value={adress} onChange={onChange} placeholder='주소' />
 			</div>
 			<div>
 				<div><b>이름:</b> {myname}</div>
 				<div><b>닉네임:</b> {nickname}</div>
+				<div><b>주소:</b> {adress}</div>
 			</div>
 		</div>
 	);
