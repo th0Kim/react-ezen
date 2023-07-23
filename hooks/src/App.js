@@ -5,6 +5,7 @@ import Counter from './Counter'; //useState
 import CounterUseReducer from './Counter_useReducer'; //useReducer
 import InfoUseReducer from './Info_useReducer'; //useReducer
 import Info from './Info'; //useState
+import Average from './Average'; //useState
 
 
 const App = () => {
@@ -30,6 +31,9 @@ const App = () => {
       </button>
       <hr />
       { visible2 && <InfoUseReducer /> }{/* visible이 true이면 <Info/> 출력 */}
+    
+      <h2>getAverage 평균값 구하기</h2>
+      <Average></Average>
     </div>
   );
 }
