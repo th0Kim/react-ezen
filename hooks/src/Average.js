@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 
 const getAverage = (numbers) => {
   console.log('평균값 계산 중..');
   if (numbers.length === 0) return 0;
-  const sum = numbers.reduce((a,b) => a + b);
+  const sum = numbers.reduce((a,b) => a + b);//a:초기값, b:현재값
   return sum / numbers.length;
 }
 
@@ -20,6 +20,9 @@ const Average = () => {
     setNember('');
   }
 
+  //getAverage는 list가 달라졌을때만 호출되고 list가 동일할때는 최초에 호출 결과를 계속해서 재사용
+  const avg = useMemo(() => getAverage(list), [list]);//함수 재사용
+
   return (
     <div>
       <input value={number} onChange={onChange}/>
@@ -30,8 +33,8 @@ const Average = () => {
         ))}
       </ul>
       <div>
-        <b>평균값:</b>
-        {getAverage(list)}
+        <b>useMemo 평균값:</b>
+        {avg}
       </div>
     </div>
   );

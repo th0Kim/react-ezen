@@ -568,8 +568,10 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
   dispatch(action)과 같은 형태로, 함수 안에 파라미터로 액션 값을 넣어주면 리듀서 함수가 호출 되는 구조이다.
   dispatch()를 사용하면 html안에서 reducer함수를 동작시킬 수 있다.
 
-  
-  ### useReducer 함수 규칙 참고 
+  #### useReducer 함수 규칙 참고 
   Counter_useReducer.js : 액션 이름 값(type)에 따른 상태 변경
   Info_useReducer.js : 액션 key값에 따른 상태 변경
   
+
+  ### useMemo : 함수 내부에서 발생하는 연산을 최적화 할 수 있다.
+  랜더링하는 과정에서 특정 값이 바뀌었을 때만 연산을 실행하고 원하는 값이 바뀌지 않았다면 이전에 연상했던 결과를 사용하는 방식.
