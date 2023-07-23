@@ -6,12 +6,17 @@ const Info = () => {
 	const [nickName, setNickName] = useState('');
 
 	useEffect(() => {
-		console.log(`랜더링이 완료되었습니다.`);
-		console.log({
-			name,
-			nickName
-		});
-	}, [name]);
+		console.log(`effect`);
+		// console.log({
+		// 	name,
+		// 	nickName
+		// });
+    return () => {
+      // cleanup
+		  console.log(`cleanup`);
+    };
+    // console 결과 : effect(시작) cleanup(정리) effect(StrictMode)
+	}, []);
 
 
 	const onChangeName = (e) => {
