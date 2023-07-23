@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useRef } from 'react';
 
 const getAverage = (numbers) => {
   console.log('평균값 계산 중..');
@@ -10,6 +10,7 @@ const getAverage = (numbers) => {
 const Average = () => {
   const [list, setList] = useState([]);//초기화: 빈배열
   const [number, setNember] = useState('');
+  const inputEl = useRef(null);//초기화 : 값을 해제 하는 null
 
   const onChange = useCallback((e) => {
     setNember(e.target.value);
@@ -19,6 +20,7 @@ const Average = () => {
     const nextList = list.concat(parseInt(number));// parseInt() 숫자 형태로 변환하고 concat 사용하여 배열 사본 추가
     setList(nextList);// setList에 새로운 배열 nextList를 업데이트 해줌
     setNember('');
+    inputEl.current.focus();//등록 후 인풋에 커서 깜빡이기
   }, [number, list]); //number 또는 list가 바뀌었을 때만 함수 생성
 
   //getAverage는 list가 달라졌을때만 호출되라(재사용)
@@ -26,7 +28,8 @@ const Average = () => {
 
   return (
     <div>
-      <input value={number} onChange={onChange}/>
+      {/* javascript 입장에서 input자체가 객채 */}
+      <input value={number} onChange={onChange} ref={inputEl}/>
       <button onClick={onInsert}>등록</button>
       <ul>
         {list.map((value, index) => (
