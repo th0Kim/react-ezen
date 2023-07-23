@@ -14,6 +14,8 @@ function reducer(state, action) {
 
 const Counter = () => {
 	const [state, dispatch] = useReducer(reducer, {value: 0});
+  // [현재상태, 액션 발생시키는 함수] = useReducer(리듀서함수, 해당 리듀서의 기본값);
+	
   return (
 		<div>
 			<p>

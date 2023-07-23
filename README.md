@@ -555,9 +555,15 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
   https://www.w3schools.com/react/react_usereducer.asp
   ```
   {
-    type: 'INCREMENT', // 다양한 상태 감소/증가 ...
+    type: 'INCREMENT', // 액션이름 : 다양한 상태 감소/증가 ...
     // 다른 값들이 필요하다면 추가로 들어감.
   }
   ```
-  Javascript 함수 reduce() 비슷비슷
+  Javascript 함수 reduce() 비슷비슷 switch
   https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+
+  useReducer의 첫번째 파라미터에는 리듀서 함수를 넣고 
+  두번째 파라미터에는 해당 리듀서의 기본값을 넣어준다.
+  이 hook을 사용하면 state값과 dispatch 함수를 받아 오는데 여기서 state는 현재를 가르키고 있는 상태고 dispath는 액션을 발생시키는 함수이다.
+  dispatch(action)과 같은 형태로, 함수 안에 파라미터로 액션 값을 넣어주면 리듀서 함수가 호출 되는 구조이다.
+  dispatch()를 사용하면 html안에서 reducer함수를 동작시킬 수 있다.
