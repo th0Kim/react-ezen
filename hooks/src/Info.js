@@ -7,16 +7,14 @@ const Info = () => {
 
 	useEffect(() => {
 		console.log(`effect`);
-		// console.log({
-		// 	name,
-		// 	nickName
-		// });
+		console.log('update: ' + name);//시작 할 때 출력, 업데이트 값 넣으면 출력
     return () => {
-      // cleanup
-		  console.log(`cleanup`);
+			// cleanup
+		  console.log(`cleanup`);//언마운트 되기 전에 출력
+			console.log('prev: ' + name);//업데이트 하기 전 값 출력
     };
     // console 결과 : effect(시작) cleanup(정리) effect(StrictMode)
-	}, []);
+	}, [name]);
 
 
 	const onChangeName = (e) => {
