@@ -567,3 +567,9 @@ id는 전역적으로 사용 가능(보안에 취약하다는 뜻)
   이 hook을 사용하면 state값과 dispatch 함수를 받아 오는데 여기서 state는 현재를 가르키고 있는 상태고 dispath는 액션을 발생시키는 함수이다.
   dispatch(action)과 같은 형태로, 함수 안에 파라미터로 액션 값을 넣어주면 리듀서 함수가 호출 되는 구조이다.
   dispatch()를 사용하면 html안에서 reducer함수를 동작시킬 수 있다.
+
+  
+  ### useReducer 함수 규칙 참고 
+  Counter_useReducer.js : 액션 이름 값(type)에 따른 상태 변경
+  Info_useReducer.js : 액션 key값에 따른 상태 변경
+  
