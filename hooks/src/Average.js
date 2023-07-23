@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 
 const getAverage = (numbers) => {
   console.log('평균값 계산 중..');
@@ -11,16 +11,17 @@ const Average = () => {
   const [list, setList] = useState([]);//초기화: 빈배열
   const [number, setNember] = useState('');
 
-  const onChange = (e) => {
+  const onChange = useCallback((e) => {
     setNember(e.target.value);
-  }
-  const onInsert = () => {//e객체 사용 안해서 비워도 됨
+  },[])//컴포넌트가 처음 랜더링 될 때만 함수 생성 == 한번만 실행 이후 재사용
+
+  const onInsert = useCallback(() => {//e객체 사용 안해서 비워도 됨
     const nextList = list.concat(parseInt(number));// parseInt() 숫자 형태로 변환하고 concat 사용하여 배열 사본 추가
     setList(nextList);// setList에 새로운 배열 nextList를 업데이트 해줌
     setNember('');
-  }
+  }, [number, list]); //number 또는 list가 바뀌었을 때만 함수 생성
 
-  //getAverage는 list가 달라졌을때만 호출되고 list가 동일할때는 최초에 호출 결과를 계속해서 재사용
+  //getAverage는 list가 달라졌을때만 호출되라(재사용)
   const avg = useMemo(() => getAverage(list), [list]);//함수 재사용
 
   return (
@@ -33,7 +34,7 @@ const Average = () => {
         ))}
       </ul>
       <div>
-        <b>useMemo 평균값:</b>
+        <b>평균값:</b>
         {avg}
       </div>
     </div>
