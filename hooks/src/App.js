@@ -2,6 +2,7 @@ import './App.css';
 import React, {useState} from "react";
 
 import Counter from './Counter'; //useState
+import CounterUseReducer from './Counter_useReducer'; //useReducer
 import Info from './Info'; //useState
 
 
@@ -11,6 +12,7 @@ const App = () => {
   return (
     <div>
       <Counter></Counter>
+      <CounterUseReducer></CounterUseReducer>
 
       <h2>useState를 여러번 사용하기</h2>
       <button onClick={() => {setVisible(!visible);}}> {/* 클릭 할 때 마다 */}
