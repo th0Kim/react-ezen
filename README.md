@@ -646,3 +646,10 @@ ref를 쉽게 사용할 수 있도록 해준다.
 ### 존재 하는 hook인지 만들어진건지 확인하기 : https://nikgraf.github.io/react-hooks/
 
 ----- End of hooks
+
+## todo-app : 스케줄링 만들기
+
+npm add sass classnames react-icons
+sass : css전처리기로 스타일코드의 재활용성을 높여주고 코드의 가독성을 높여 유지보수를 쉽게 해줌
+classnames : 조건부 스타일링
+react-icons : svg형태로 이뤄진 다양하고 예쁜 아이콘 사용 가능하게 하는 라이브러리
