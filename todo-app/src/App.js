@@ -34,11 +34,15 @@ function App() {
     nextId.current += 1; // nextId 1씩 더하기 => 5
   },[todos]);
 
+  const onRemove = useCallback((id) => {
+    // setTodos는 업데이트 전 임시 저장 공간
+    setTodos(todos.filter((todo) => todo.id !== id));// 선택한 id만 빼고 업데이트(선택한 id 삭제)
+  }, [todos]);
 
   return (
     <TodoTemplate>
       <TodoInsert onInsert={onInsert}  />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onRemove={onRemove} />
     </TodoTemplate>
   );
 }
