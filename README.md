@@ -670,3 +670,9 @@ https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopl
 
 youtube는 영상이 많음에도 리액트를 사용하지 않았는데, 
 영상을 iframe으로 불러오기 때문이다. iframe은 텍스트로 인식되어 저용량으로 가져온다.
+
+#### 컴포넌트가 리랜더링이 발생 할 때 
+1. 자신이 전달받은 props가 변경 될 때
+2. 자신의 state가 바뀔때
+3. 부모 컴포넌트가 리랜더링 될 때
+4. forceUpdate 함수가 실핼 될 때
