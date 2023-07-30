@@ -13,7 +13,7 @@ const TodoInsert = ({onInsert}) => {
   const onSubmit = useCallback((e) => {
     onInsert(value);
     setValue('');
-    e.preventDefault();
+    e.preventDefault();//새로고침 막기
   },[onInsert, value],)
 
   
