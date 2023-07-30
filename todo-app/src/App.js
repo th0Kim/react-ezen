@@ -44,20 +44,20 @@ const App = () => {
       text,
       checked: false,
     }
-    setTodos(todos.concat(todo));//복제한 todos에 id가 4인 todo를 추가 
+    setTodos(todos => todos.concat(todo));//복제한 todos에 id가 4인 todo를 추가 
     nextId.current += 1; // nextId 1씩 더하기 => 5
-  },[todos]);
+  },[]);
 
   const onRemove = useCallback((id) => {
     // setTodos는 업데이트 전 임시 저장 공간
-    setTodos(todos.filter((todo) => todo.id !== id));// 선택한 id만 빼고 업데이트(선택한 id 삭제)
-  }, [todos]);
+    setTodos(todos => todos.filter((todo) => todo.id !== id));// 선택한 id만 빼고 업데이트(선택한 id 삭제)
+  }, []);
 
   const onToggle = useCallback((id) => {
     setTodos(
-      todos.map((todo) => todo.id === id ? { ...todo, checked: !todo.checked} : todo, )//...todo로 새로운 배열로 복사하고, 선택한 id가 같으면 true면 false로 바꾸고 false면 true로 바꿔라 : 선택한 id가 아니면 기존 todo로 유지
+      todos => todos.map((todo) => todo.id === id ? { ...todo, checked: !todo.checked} : todo, )//...todo로 새로운 배열로 복사하고, 선택한 id가 같으면 true면 false로 바꾸고 false면 true로 바꿔라 : 선택한 id가 아니면 기존 todo로 유지
     );
-  }, [todos]);
+  }, []);
 
   return (
     <TodoTemplate>
