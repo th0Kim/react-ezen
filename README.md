@@ -785,3 +785,5 @@ List 컴포넌트를 사용하기위해 rowRenderer라는 함수를 새로 작�
 이 함수는 react-virtualized의 List 컴포넌트에서 각 TodoItem을 렌더링 할 때 사용하며, 이 함수를 List 컴포넌트의 props로 설정해 주어야 한다.
 이 함수는 파마리터에 index, key, style값을 객체 타입으로 받아와서 사용한다.
 List 컴포넌트를 사용할 때는 해당 리스트의 전체 크기(width={512} height={513}), 각 항목의 높이(rowHeight={57}), 각 항목을 렌더링 할 때 사용해야 하는 함수(rowRenderer={rowRenderer}) 그리고 배열을 props(List={todos})로 널어줘야 한다. 그러면 이 컴포넌트가 전달 받은 props를 사용하여 자동 최적화 해준다.
+
+----- End of todo-app
