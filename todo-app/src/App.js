@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import './App.css';
 import TodoTemplate from './component/TodoTemplate';
 import TodoInsert from './component/TodoInsert';
@@ -23,9 +23,21 @@ function App() {
     },
   ]);
 
+  const nextId = useRef(4);//nextId를 지역변수로 이 컴포넌트에서만 사용한다.
+  const onInsert = useCallback((text) => {//text 값만 받아오기
+    const todo = {
+      id: nextId.current,//4
+      text,
+      checked: false,
+    }
+    setTodos(todos.concat(todo));//복제한 todos에 id가 4인 todo를 추가 
+    nextId.current += 1; // nextId 1씩 더하기 => 5
+  },[todos]);
+
+
   return (
     <TodoTemplate>
-      <TodoInsert />
+      <TodoInsert onInsert={onInsert}  />
       <TodoList todos={todos} />
     </TodoTemplate>
   );
