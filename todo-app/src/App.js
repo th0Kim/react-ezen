@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useReducer, useRef } from 'react';
 import './App.css';
 import TodoTemplate from './component/TodoTemplate';
 import TodoInsert from './component/TodoInsert';
@@ -17,46 +17,44 @@ function createBulkTodos() {
   return array;
 }
 
-const App = () => {
-  // const [todos, setTodos] = useState([
-  //   {
-  //     id: 1,
-  //     text: '리액트의 기초알아보기',
-  //     checked: true,
-  //   },
-  //   {
-  //     id: 2,
-  //     text: '컴포넌트 스타일링 해보기',
-  //     checked: true,
-  //   },
-  //   {
-  //     id: 3,
-  //     text: '일정 관리 앱 만들어 보기',
-  //     checked: false,
-  //   },
-  // ]);
-  const [todos, setTodos] = useState(createBulkTodos);//함수를 파라미터 값으로 넘기면 초기 랜더링 시 한번만 실행 된다.
+function todoReducer(todos, action) {
+  switch(action.type) {
+    case 'INSERT' : //새로 추가
+    //{type: 'INSERT', todo:{id:1, text:'todo', checked:false}}
+    return todos.concat(action.todo);
 
+    case 'REMOVE': //제거
+    //{type: 'REMOVE', id:1}
+    return todos.filter((todo) => todo.id !== action.id);
+
+    case 'TOGGLE' : //토글
+    //{type: 'TOGGLE', id:1}
+    return todos.map((todo) => todo.id === action.id ? { ...todo, checked: !todo.checked} : todo, );
+    
+    default: return todos;
+  }
+}
+
+const App = () => {
+  const [todos, dispatch] = useReducer(todoReducer, undefined, createBulkTodos);
   const nextId = useRef(2501);//nextId를 지역변수로 이 컴포넌트에서만 사용한다.
+  
   const onInsert = useCallback((text) => {//text 값만 받아오기
     const todo = {
-      id: nextId.current,//4
+      id: nextId.current,
       text,
       checked: false,
-    }
-    setTodos(todos => todos.concat(todo));//복제한 todos에 id가 4인 todo를 추가 
-    nextId.current += 1; // nextId 1씩 더하기 => 5
+    };
+    dispatch({ type: 'INSERT', todo });// useReducer > todoReducer에 case INSERT에 todo를 넘김
+    nextId.current += 1;
   },[]);
 
   const onRemove = useCallback((id) => {
-    // setTodos는 업데이트 전 임시 저장 공간
-    setTodos(todos => todos.filter((todo) => todo.id !== id));// 선택한 id만 빼고 업데이트(선택한 id 삭제)
+    dispatch({ type: 'REMOVE', id });// useReducer > todoReducer에 case REMOVE에 id를 넘김
   }, []);
 
   const onToggle = useCallback((id) => {
-    setTodos(
-      todos => todos.map((todo) => todo.id === id ? { ...todo, checked: !todo.checked} : todo, )//...todo로 새로운 배열로 복사하고, 선택한 id가 같으면 true면 false로 바꾸고 false면 true로 바꿔라 : 선택한 id가 아니면 기존 todo로 유지
-    );
+    dispatch({ type: 'TOGGLE', id });// useReducer > todoReducer에 case TOGGLE에 id를 넘김
   }, []);
 
   return (
