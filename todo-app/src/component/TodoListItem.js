@@ -3,7 +3,7 @@ import {
   MdCheckBox,
   MdRemoveCircleOutline,
 } from 'react-icons/md';
-import cn from 'classnames';
+import cn from 'classnames';//클래스 이름에 따른 조건식 함수 라이브러리
 import './TodoListItem.scss';
 
 const TodoListItem = ({ todo }) => {
@@ -11,12 +11,12 @@ const TodoListItem = ({ todo }) => {
 
   return (
     <div className="TodoListItem">
-      <div className="checkbox">
-        <MdCheckBoxOutlineBlank />
+      <div className={cn('checkbox', { checked })}>
+        {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
         <div className="text">{text}</div>
-        <div className="remove">
-          <MdRemoveCircleOutline />
-        </div>
+      </div>
+      <div className="remove">
+        <MdRemoveCircleOutline />
       </div>
     </div>
   );
