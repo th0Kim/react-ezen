@@ -743,17 +743,35 @@ const nextObjectGood = {
 };
 console.log(object === nextObjectGood);
 ```
+
+객체 복사의 나쁜 예시
 ```
 const todos =[{id:1, checked : true}, {id:2, checked:true}];
-const nextTodos = [...todos];
+const nextTodos = [...todos]; //nextTodos 배열 복사
 
 nextTodos[0].checked = false;
 console.log(todos[0] === nextTodos[0]); 
 
 nextTodos[0] = {
-  ...nextTodos[0],
+  ...nextTodos[0], //nextTodos의 객채 복사하여 값 변경
   checked:true
 };
 console.log(nextTodos[0]);
 console.log(todos[0] === nextTodos[0]);
 ```
+```
+const complexObject ={};
+const nextComplexObject ={
+  ...complexObject,
+  objectInside:{
+  ...complexObject.objectInside,
+  enabled:false
+}
+};
+console.log(complexObject === nextComplexObject); 
+console.log(complexObject.objectInside === nextComplexObject.objectInside); 
+```
+
+객체 복사에 활용하는 immer 라이브러리
+배열 혹은 객채의 구조가 복잡해진다면 불변성을 유지하면서 업데이트하는 것이 까다로워진다.
+그래서 이렇게 복잡한 상황 일 경우 immer 라이브러리의 도움을 받으면 편하게 작업 가능 함!!
