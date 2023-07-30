@@ -5,8 +5,9 @@ import {
 } from 'react-icons/md';
 import cn from 'classnames';//클래스 이름에 따른 조건식 함수 라이브러리
 import './TodoListItem.scss';
+import React from 'react';
 
-const TodoListItem = ({ todo, onRemove, onToggle }) => {
+const TodoListItem = ({ todo, onRemove, onToggle }) => {//부모로 부터 상속 받은 값들
   const { id, text, checked } = todo;
 
   return (
@@ -22,4 +23,4 @@ const TodoListItem = ({ todo, onRemove, onToggle }) => {
   );
 };
 
-export default TodoListItem;
+export default React.memo(TodoListItem);// todo, onRemove, onToggle가 바뀌지 않으면 컴포넌트를 리랜더링 하지 않게 함
