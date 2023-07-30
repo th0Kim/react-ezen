@@ -39,10 +39,16 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id));// 선택한 id만 빼고 업데이트(선택한 id 삭제)
   }, [todos]);
 
+  const onToggle = useCallback((id) => {
+    setTodos(
+      todos.map((todo) => todo.id === id ? { ...todo, checked: !todo.checked} : todo, )//...todo로 새로운 배열로 복사하고, 선택한 id가 같으면 true면 false로 바꾸고 false면 true로 바꿔라 : 선택한 id가 아니면 기존 todo로 유지
+    );
+  }, [todos]);
+
   return (
     <TodoTemplate>
       <TodoInsert onInsert={onInsert}  />
-      <TodoList todos={todos} onRemove={onRemove} />
+      <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
     </TodoTemplate>
   );
 }

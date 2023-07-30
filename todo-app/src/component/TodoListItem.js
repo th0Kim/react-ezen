@@ -6,12 +6,12 @@ import {
 import cn from 'classnames';//클래스 이름에 따른 조건식 함수 라이브러리
 import './TodoListItem.scss';
 
-const TodoListItem = ({ todo, onRemove }) => {
+const TodoListItem = ({ todo, onRemove, onToggle }) => {
   const { id, text, checked } = todo;
 
   return (
     <div className="TodoListItem">
-      <div className={cn('checkbox', { checked })}>
+      <div className={cn('checkbox', { checked })} onClick={()=> onToggle(id)}>
         {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
         <div className="text">{text}</div>
       </div>
