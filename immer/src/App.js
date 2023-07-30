@@ -14,7 +14,7 @@ const App = () => {
       const { name, value } = e.target;
       setForm({
         ...form,
-        [name]: [value],
+        [name]: [value], //대괄호를 쓰면 해당 이름으로 값을 끌어 올 수 있다.
       });
     },
     [form]
@@ -23,7 +23,7 @@ const App = () => {
   // form 등록을 위한 함수
   const onSubmit = useCallback(
     (e) => {
-      e.preventDefault();
+      e.preventDefault(); //submit 초기화 방지
       const info = {
         id: nextId.current,
         name: form.name,
