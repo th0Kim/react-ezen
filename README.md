@@ -663,3 +663,10 @@ https://react-icons.github.io/react-icons/icons?name=md
 ```
 import cn from 'classnames';
 ```
+
+#### react chrome 확장 프로그램에서 검색 후 설치
+##### 웹사이트가 리액트로 개발되었는지 확인 가능
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?utm_source=ext_app_menu
+
+youtube는 영상이 많음에도 리액트를 사용하지 않았는데, 
+영상을 iframe으로 불러오기 때문이다. iframe은 텍스트로 인식되어 저용량으로 가져온다.
