@@ -705,4 +705,55 @@ const [todos, dispatch] = useReducer(todoReducer, undefined, createBulkTodos);
 // 비어져 있는 상태(undefined)로 읽어 들여라. 한번 쫙 랜더링 되는 과정을 실행한다.
 
 //dispatch는 action을 발생 시킴
+
+
+```
+
+기존 데이터를 수정할 때 직접 수정하지 않고(push) 새로운 배열을 만든 다음에 새로운 객체를 만들어서 필요한 부분을 교체해주는 방식으로 구현했다. 업데이트가 필요한 곳에서는 아예 새로운 배열 혹은 새로운 객체를 만들기 떄문에 React.memo를 사용했을 때 props가 변경이 있는지 알아내서 리랜더링 성능을 최적화 할 수 있다.
+== 불변성이다..
+
+arr가 nextArrBad으로 값이 덮어씌어짐
+```
+const arr = [0,1,2,3,4];
+const nextArrBad = arr;
+nextArrBad[0] = 100;
+console.log(arr === nextArrBad); //true
+```
+nextArrGood[0]가 [..arr] 복사 해온 배열에 변경 되어 arr과 nextArrGood 사이의 차이가 생길 수 밖에 없다.(불변성)
+```
+const nextArrGood = [..arr];
+nextArrGood[0] = 100;
+console.log(arr === nextArrGood); //false
+```
+
+##### 실무데이터
+```
+const object ={
+  foo:'bar',
+  value:1
+};
+
+const nextObjectBad = object;
+nextObjectBad.value = nextObjectBad.value+1;
+console.log(object === nextObjectBad); 
+
+const nextObjectGood = {
+  ...object, 
+  value : object.value + 1 
+};
+console.log(object === nextObjectGood);
+```
+```
+const todos =[{id:1, checked : true}, {id:2, checked:true}];
+const nextTodos = [...todos];
+
+nextTodos[0].checked = false;
+console.log(todos[0] === nextTodos[0]); 
+
+nextTodos[0] = {
+  ...nextTodos[0],
+  checked:true
+};
+console.log(nextTodos[0]);
+console.log(todos[0] === nextTodos[0]);
 ```
