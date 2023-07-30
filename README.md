@@ -787,3 +787,5 @@ List 컴포넌트를 사용하기위해 rowRenderer라는 함수를 새로 작�
 List 컴포넌트를 사용할 때는 해당 리스트의 전체 크기(width={512} height={513}), 각 항목의 높이(rowHeight={57}), 각 항목을 렌더링 할 때 사용해야 하는 함수(rowRenderer={rowRenderer}) 그리고 배열을 props(List={todos})로 널어줘야 한다. 그러면 이 컴포넌트가 전달 받은 props를 사용하여 자동 최적화 해준다.
 
 ----- End of todo-app
+
+### immer 라이브러리를 사용하면 구조가 복잡한 객체도 짧은 코드를 사용하여 불변성을 유지하면서 업데이트를 해줄 수 있다.
