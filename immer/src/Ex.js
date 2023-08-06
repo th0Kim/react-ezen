@@ -14,6 +14,7 @@ const originalState = [
 ];
 
 const nextState = produce(originalState, (draft) => {
+  //originalState에서 복사한 객체를 draft에 대입하여 draft로 값을 설정한다.
   // id가 2인 항목의 checked 값을 true로 설정
   const todo = draft.find((t) => t.id === 2); //id로 항목 찾기
   todo.checked = true;
