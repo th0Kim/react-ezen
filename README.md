@@ -845,7 +845,7 @@ console.log(nextState);
 ## SPA : single page application
 페이지는 1개이고 html은 한번만 불러오며, 내용 업데이트가 필요하면 '그 부분'만 업데이트가 일어남(다른페이지로 이동한거 같은 착시..!)
 
-#### 라우터 기능
+### 라우터 기능
 ```
 //설치
   npm add react-router-dom
@@ -857,6 +857,15 @@ console.log(nextState);
   <BrowserRouter>
     <App />
   </BrowserRouter>
+```
+
+### 라우터 사용 방법
+사용자의 브라우저 주소 경로에 따라 우리가 원하는 컴포넌트를 보여주려면 Route 라는 컴포넌트를 통해 라우트 설정을 해줘야 한다.
+
+```
+<Routes>
+  <Route path="주소 규칙" element={보여 줄 컴포넌트 JSX} />
+</Routes>
 ```
 
 #### API : 주고 받고
