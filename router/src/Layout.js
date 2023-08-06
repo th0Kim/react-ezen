@@ -9,7 +9,7 @@ const Layout = () => {
     navigate(-1);
   };
   const goAtricles = () => {
-    navigate("/articles");
+    navigate("/articles", { replace: true });
   };
 
   return (
