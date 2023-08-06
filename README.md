@@ -893,5 +893,14 @@ console.log(nextState);
 - state : 페이지로 이동할 때 임의로 넣을 수 있는 상태 값
 - key : location 객체의 고유값, 초기에는 default이며 페이지가 변경될 때 마다 고유의 값이 생성됨.
 
+#### 파싱 예시)
+?where=nexearch&sm=top_hty
+이 문자열에서 앞에 있는 ?를 지우고
+& 연산자로 분리한 뒤 key와 vaule를 파싱(구문을 분석)하는 작업을 진행해야 한다.
+
+!useSearchParams
+npm qs 또는 querystring 패키지를 설치해서 처리 할 수 있다.
+리액트 라우터에서는 v6부터 useSearchParams라는 hook을 통해 쿼리스트링을 다룰 수 있다.
+
 
 ## API : 주고 받고
