@@ -4,15 +4,15 @@ import { useSearchParams } from "react-router-dom";
 const About = () => {
   // const location = useLocation();
   const [searchParams, setsearchParams] = useSearchParams();
-  const detail = searchParams.get("detail");
-  const mode = searchParams.get("mode");
+  const detail = searchParams.get("detail"); //key 값
+  const mode = searchParams.get("mode"); //key 값
 
   const onToggleDetail = () => {
     setsearchParams({ mode, detail: detail === "true" ? false : true });
   };
 
   const onIncreaseMode = () => {
-    const nextMode = mode === null ? 1 : parseInt(mode) + 1;
+    const nextMode = mode === null ? 1 : parseInt(mode) + 1; //parseInt 숫자로 변경
     setsearchParams({ mode: nextMode, detail });
   };
 
