@@ -9,7 +9,7 @@ const Layout = () => {
     navigate(-1);
   };
   const goAtricles = () => {
-    navigate("/articles", { replace: true });
+    navigate("/articles", { replace: true }); //replace articles에 한하여, 이전 페이지 기록을 지운다.
   };
 
   return (
