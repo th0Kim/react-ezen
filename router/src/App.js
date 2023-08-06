@@ -9,8 +9,9 @@ import Layout from "./Layout";
 function App() {
   return (
     <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
+      <Route path="/" element={<Layout />}>
+        {/* 실직적 index를 알려주는 키워드 */}
+        <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/profile/:username" element={<Profile />} />
       </Route>
