@@ -908,7 +908,11 @@ Route(Articles)의 children으로 들어가는 jsx 엘리먼트를 보여주는 
 <Route path=":id" element={<Article />} />
 ```
 
-
+```
+<Route index element={<Home />} />
+```
+index prop을 사용하면 상위 라우트의 경로와 일치하지만 그 이후에 경로가 주어지지 않을 때 보여지는 라우터를 설정 할 수 있다.
+path='/'와 동일한 역할을 하고 이를 좀더 명시적으로 표현하는 방법이다.
 
 
 
