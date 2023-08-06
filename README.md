@@ -838,6 +838,9 @@ console.log(nextState);
 ```
 ### 첫번째 파라미터(draft)가 함수 형태면 알아서 업데이트 함수를 반환한다.
 
+----- End of immer
+
+
 
 ## SPA : single page application
 페이지는 1개이고 html은 한번만 불러오며, 내용 업데이트가 필요하면 '그 부분'만 업데이트가 일어남(다른페이지로 이동한거 같은 착시..!)
