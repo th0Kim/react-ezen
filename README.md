@@ -793,7 +793,7 @@ List 컴포넌트를 사용할 때는 해당 리스트의 전체 크기(width={5
 
 예시코드 
 ```
-import produce from 'immer';
+import { produce } from "immer";
 const nextState = produce(originalState, draft => {
   //바꾸고 싶은 값 바꾸기
   draft.somewhere.deep.inside = 5;
