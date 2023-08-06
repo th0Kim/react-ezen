@@ -934,7 +934,47 @@ path="*" 와일트 카드 문자는 아무 텍스트를 매칭 하는 것으로 
 즉, 페이지를 리다이렉트하고 싶을 때
 
 
+### javascript es6 객체 : promise
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise
+```
+function increase(number){
+  const promise = new Promise((resolve, reject)=>{//resolve: 성공, reject: 실패
+  setTimeout(()=>{
+    const result = number +10;
+    if(result > 50 ){
+      const e = new Error('NumberTooBig');
+      return reject(e);
+    }
+    resolve(result); 
+  },1000);
+});
+  return promise;
+}
 
+increase(0).then(number =>{
+  console.log(number);
+  return increase(number);
+})
+.then(number =>{
+  console.log(number);
+  return increase(number);
+})
+.then(number =>{
+  console.log(number);
+  return increase(number);
+})
+.then(number =>{
+  console.log(number);
+  return increase(number);
+})
+.then(number =>{
+  console.log(number);
+  return increase(number);
+})
+.catch(e =>{
+  console.log(e);
+});
+```
 
 
 ## API : 주고 받고
