@@ -976,5 +976,42 @@ increase(0).then(number =>{
 });
 ```
 
+### javascript es8 객체 (비동기) : async
+function increase(number){
+  const promise = new Promise((resolve, reject)=>{
+   
+  setTimeout(()=>{
+    const result = number +10;
+    if(result > 50 ){
+      const e = new Error('NumberTooBig');
+      return reject(e);
+    }
+    resolve(result); 
+  },1000);
+});
+  return promise;
+}
+
+
+async function runTasks(){//async 꼭 써줘야 promise 객체를 비동기로 가져옴
+  try{//성공
+    let result = await increase(0);//await 키워드로 받음
+    console.log(result);
+    result = await increase(result);
+    console.log(result);
+    result = await increase(result);
+    console.log(result);
+    result = await increase(result);
+    console.log(result);
+    result = await increase(result);
+    console.log(result);
+    result = await increase(result);
+    console.log(result);
+  }catch (e){//실패
+    console.log(e);
+  }
+}
+
+runTasks();
 
 ## API : 주고 받고
