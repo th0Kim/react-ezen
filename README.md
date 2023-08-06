@@ -902,5 +902,15 @@ console.log(nextState);
 npm qs 또는 querystring 패키지를 설치해서 처리 할 수 있다.
 리액트 라우터에서는 v6부터 useSearchParams라는 hook을 통해 쿼리스트링을 다룰 수 있다.
 
+#### Outlet
+Route(Articles)의 children으로 들어가는 jsx 엘리먼트를 보여주는 역할을 한다.
+```
+<Route path=":id" element={<Article />} />
+```
+
+
+
+
+
 
 ## API : 주고 받고
