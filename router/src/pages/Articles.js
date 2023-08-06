@@ -4,8 +4,6 @@ import { Link, Outlet } from "react-router-dom";
 const Articles = () => {
   return (
     <>
-      {/* Outlet은 <Route path=":id" element={<Article />} /> */}
-      <Outlet />
       <ul>
         <li>
           {/* <Route path="/articles/:id" element={<Articles />} /> */}
@@ -18,6 +16,8 @@ const Articles = () => {
           <Link to="/articles/3">게시글 3</Link>
         </li>
       </ul>
+      {/* Outlet은 <Route path=":id" element={<Article />} /> */}
+      <Outlet />
     </>
   );
 };
