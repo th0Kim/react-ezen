@@ -868,4 +868,10 @@ console.log(nextState);
 </Routes>
 ```
 
+#### Link 컴포넌트 
+사용하면 페이지를 새로 불러오는 것을 막고 History API를 통해서 브라우저 주소의 경로만 바꾸는 기능이 내장되어 있다.
+```
+<Link to='경로'>링크 이름</Link>
+```
+
 #### API : 주고 받고
