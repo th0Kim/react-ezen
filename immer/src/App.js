@@ -1,3 +1,4 @@
+import { produce } from "immer";
 import React, { useRef, useCallback, useState } from "react";
 
 const App = () => {
@@ -9,13 +10,25 @@ const App = () => {
   });
 
   // input 수정을 위한 함수
+  // const onChange = useCallback(
+  //   (e) => {
+  //     const { name, value } = e.target;
+  //     setForm({
+  //       ...form,
+  //       [name]: [value], //대괄호를 쓰면 해당 이름으로 값을 끌어 올 수 있다.
+  //     });
+  //   },
+  //   [form]
+  // );
+  // immer 사용: input 수정을 위한 함수
   const onChange = useCallback(
     (e) => {
       const { name, value } = e.target;
-      setForm({
-        ...form,
-        [name]: [value], //대괄호를 쓰면 해당 이름으로 값을 끌어 올 수 있다.
-      });
+      setForm(
+        produce(form, (draft) => {
+          draft[name] = value;
+        })
+      );
     },
     [form]
   );
@@ -31,10 +44,16 @@ const App = () => {
       };
 
       // array 에 새 항목 등록
-      setData({
-        ...data,
-        array: data.array.concat(info),
-      });
+      // setData({
+      //   ...data,
+      //   array: data.array.concat(info),
+      // });
+      // immer 사용: array 에 새 항목 등록
+      setData(
+        produce(data, (draft) => {
+          draft.array.push(info);
+        })
+      );
 
       // form 초기화
       setForm({
@@ -47,12 +66,27 @@ const App = () => {
   );
 
   // 항목을 삭제하는 함수
+  // const onRemove = useCallback(
+  //   (id) => {
+  //     setData({
+  //       ...data,
+  //       array: data.array.filter((info) => info.id !== id),
+  //     });
+  //   },
+  //   [data]
+  // );
+
+  // immer 사용: 항목을 삭제하는 함수
   const onRemove = useCallback(
     (id) => {
-      setData({
-        ...data,
-        array: data.array.filter((info) => info.id !== id),
-      });
+      setData(
+        produce(data, (draft) => {
+          draft.array.splice(
+            draft.array.findIndex((info) => info.id === id), // id를 찾아서 제거 하라
+            1 // 0이면 제거 하지 말라는 뜻
+          );
+        })
+      );
     },
     [data]
   );
