@@ -884,5 +884,9 @@ console.log(nextState);
 키워드 검색, 페이지네이션, 정렬방식 등 데이터 조회에 필요한 옵션을 전달 할 때
 예시) articles?page=1&keyword=react
 
+### useParams 사용방법
+
+
+
 
 #### API : 주고 받고
