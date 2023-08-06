@@ -811,3 +811,29 @@ immer 라이브러리에 있는 produce 함수는 두개 파라미터(매개변�
 
 originalState, draft의 역할 :
 find, push, splice는 javascript로서 불변성을 지키지 못하여(기존값을 변경 시킴) 리액트에서는 사용 하면 안되지만, immer 라이브러리를 사용하면 자동으로 불변성을 originalState, draft 파라미터로 관리 해줌으로 사용 할 수 있게 되는 것이다.
+
+
+# useState의 함수형 업데이트와 immer 함께 쓰기
+예시 코드)
+```
+const [number, setNumber] = useState(0);
+const onIncrease = useCallback(
+  //prevNumber는 현재 number 값을 가르킨다.
+  () => setNumber(prevNumber => prevNumber + 1),
+  [],
+);
+```
+
+예시 코드)
+```
+const update = produce(draft =>{
+  draft.value = 2;
+});
+const originalState ={
+  value:1,
+  foo:'bar',
+};
+const nextState = update(originalState);
+console.log(nextState); 
+```
+### 첫번째 파라미터(draft)가 함수 형태면 알아서 업데이트 함수를 반환한다.
