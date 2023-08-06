@@ -7,7 +7,7 @@ const data = {
 };
 
 const Profile = () => {
-  const params = useParams(); //주소를 파라미터로 사용하는 hook이 들어 있음
+  const params = useParams(); //주소를 파라미터로 사용하는 hook이 들어 있음 :username
   const profile = data[params.username];
   return (
     <div>

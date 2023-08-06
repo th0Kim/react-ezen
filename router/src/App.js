@@ -9,6 +9,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/profile/:username" element={<Profile />} />
+      {/* useParams이름으로 Profile.js에 파라미터로 사용 하겠다. */}
     </Routes>
   );
 }
