@@ -925,6 +925,9 @@ articles로 이동 했을 때 그 이전 페이지가 기록에 남지 않는다
 <NavLink style={({isActive}) => ( isActive? activeStyle : undefined )} />
 ```
 
+#### NotFound.js
+path="*" 와일트 카드 문자는 아무 텍스트를 매칭 하는 것으로 경로 외 주소는 404 처리 한다.
+라우터 연결 위치는 항상 마지막이다.(위에 있는 라우터 경로를 매칭 하고도 없을 때)
 
 
 
