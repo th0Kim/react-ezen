@@ -19,7 +19,7 @@ const App = () => {
       {data && (
         <textarea
           row={7}
-          value={JSON.stringify(data, null, 2)}
+          value={JSON.stringify(data, null, 2)} //stringify 매서드를 통해서 JSON 객체로 데이터를 표현 해준다.
           readOnly={true}
         />
       )}
