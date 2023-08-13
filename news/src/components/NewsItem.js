@@ -37,6 +37,7 @@ const NewsItem = ({ article }) => {
 
   return (
     <NewsItemBlock>
+      {/* urlImage가 있으면 && */}
       {urlImage && (
         <div className="thumbnail">
           <a href={url} target="_blank" rel="noopener noreferrer">
