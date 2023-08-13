@@ -1036,3 +1036,10 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JS
 
 ### UI 만들기
 npm add styled-components
+
+NewsItem.js : 각 뉴스 정보를 보여주는 컴포넌트(UI)
+NewsList.js : API를 요청하고 뉴스 데이터가 들어 있는 배열 컴포넌트 배열로 변환하여 랜더링 해주는 컴포넌트
+
+### 임시 이미지 적용해 볼 수 있는 url
+160x160 이미지
+https://via.placeholder.com/160

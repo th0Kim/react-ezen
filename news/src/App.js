@@ -1,35 +1,8 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
+import NewsList from "./components/NewsList";
 
 const App = () => {
-  const [data, setData] = useState(null);
-  const onClick = async () => {
-    try {
-      //성공
-      const response = await axios.get(
-        "https://newsapi.org/v2/top-headlines?country=kr&apiKey=b13740f78e7841f8902c8422ce06386a"
-      ); //데이터를 get하고 response에 전달
-      setData(response.data); //setData에 담기
-    } catch (e) {
-      //실패
-      console.log(e);
-    }
-  };
-
-  return (
-    <div>
-      <div>
-        <button onClick={onClick}>불러오기</button>
-      </div>
-      {data && (
-        <textarea
-          row={7}
-          value={JSON.stringify(data, null, 2)} //stringify 매서드를 통해서 JSON 객체로 데이터를 표현 해준다.
-          readOnly={true}
-        />
-      )}
-    </div>
-  );
+  return <NewsList />;
 };
 
 export default App;
