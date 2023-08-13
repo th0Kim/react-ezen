@@ -1062,3 +1062,6 @@ if (!articles) {
 ```
 
 ----- End of News
+
+### Context API 
+v16.3부터 많은 개선으로 사용하기 좋아짐
