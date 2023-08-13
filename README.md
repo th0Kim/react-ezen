@@ -984,7 +984,7 @@ function increase(number){
   setTimeout(()=>{
     const result = number +10;
     if(result > 50 ){
-      const e = new Error('NumberTooBig');
+      const e = new Error('NumberTooBig');//Error라는 객체가 존재함
       return reject(e);
     }
     resolve(result); 
