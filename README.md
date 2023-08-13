@@ -1033,3 +1033,6 @@ npm add axios
 
 #### JSON.stringify() : 객체를 JSON 문자열로 변환
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+
+### UI 만들기
+npm add styled-components
