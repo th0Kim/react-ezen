@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
 import styled from "styled-components";
 import axios from "axios";
+import Categories from "./Categories";
 
 const NewsListBlock = styled.div`
   box-sizing: border-box;
@@ -22,7 +23,7 @@ const NewsListBlock = styled.div`
 //   urlImage: "https://via.placeholder.com/160",
 // };
 
-const NewsList = () => {
+const NewsList = ({ category }) => {
   const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -35,8 +36,9 @@ const NewsList = () => {
       // 대기 끝 데이터 불러오기 시작
       try {
         //성공
+        const query = category === "all" ? "" : `&category=${category}`;
         const response = await axios.get(
-          "https://newsapi.org/v2/top-headlines?country=kr&apiKey=b13740f78e7841f8902c8422ce06386a"
+          `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=b13740f78e7841f8902c8422ce06386a`
         );
         setArticles(response.data.articles);
       } catch (e) {
@@ -48,7 +50,7 @@ const NewsList = () => {
     };
     // 변수 실행
     fetchData();
-  }, []);
+  }, [category]);
 
   // 대기중 일 때 (초기값 false ->  fetchData(); 실행 -> setLoading(true); 이 때 표시)
   if (loading) {
