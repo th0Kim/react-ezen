@@ -7,7 +7,7 @@ const App = () => {
     try {
       //성공
       const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/todos/1"
+        "https://newsapi.org/v2/top-headlines?country=kr&apiKey=b13740f78e7841f8902c8422ce06386a"
       ); //데이터를 get하고 response에 전달
       setData(response.data); //setData에 담기
     } catch (e) {
