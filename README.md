@@ -977,6 +977,7 @@ increase(0).then(number =>{
 ```
 
 ### javascript es8 객체 (비동기) : async
+```
 function increase(number){
   const promise = new Promise((resolve, reject)=>{
    
@@ -1013,5 +1014,11 @@ async function runTasks(){//async 꼭 써줘야 promise 객체를 비동기로 �
 }
 
 runTasks();
+```
 
 ## API : 주고 받고
+
+---
+
+# 20230813
+
