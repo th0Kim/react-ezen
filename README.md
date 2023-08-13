@@ -1078,3 +1078,15 @@ context : 전역으로 단 한번에 원하는 값을 받아와서 사용 할 �
 <div>결과 : {children(5)}</div>
 <div>{value => 2*value}</div>
 ```
+
+```
+<!-- 변경 하고자 하는 값이 있는 경우 -->
+<ColorContext.Provider value={{ color: "red" }}>
+</ColorContext.Provider>
+
+<!-- 변경 하고자 하는 값이 없는 경우 -->
+<ColorContext></ColorContext>
+
+<!-- 잘못 된 사용 방법 : 에러 뜸 -->
+<ColorContext.Provider></ColorContext.Provider>
+```
