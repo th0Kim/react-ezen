@@ -1063,7 +1063,6 @@ if (!articles) {
 
 ----- End of News
 
-## 리덕스...
 ### Context API 
 v16.3부터 많은 개선으로 사용하기 좋아짐
 
@@ -1090,3 +1089,9 @@ context : 전역으로 단 한번에 원하는 값을 받아와서 사용 할 �
 <!-- 잘못 된 사용 방법 : 에러 뜸 -->
 <ColorContext.Provider></ColorContext.Provider>
 ```
+
+#### useContext : Consumer 대신 Hook을 사용한다.
+
+
+
+### 리덕스...
