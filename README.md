@@ -1024,3 +1024,9 @@ runTasks();
 
 # 20230813
 
+promise 기반(비동기) axios 설치
+```
+npm add axios
+```
+현재 가장 많이 사용되고 있는 자바스크립트 http 클라이언트이다.
+이 라이브러리의 특징은 http 요청을 Promise 기반으로 처리한다는 점이다.
