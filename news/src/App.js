@@ -5,9 +5,9 @@ const App = () => {
   const [data, setData] = useState(null);
   const onClick = () => {
     axios
-      .get("https://jsonplaceholder.typicode.com/todos/1")
+      .get("https://jsonplaceholder.typicode.com/todos/1") //데이터를 get하고 response에 전달
       .then((response) => {
-        setData(response.data);
+        setData(response.data); //setData에 담기
       });
   };
 
