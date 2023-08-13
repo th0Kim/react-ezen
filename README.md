@@ -1047,3 +1047,16 @@ https://via.placeholder.com/160
 ### a태그 rel="" html5이후 업데이트 된 보안 강화 속성
 https://usingu.co.kr/frontend/html/rel%EC%86%8D%EC%84%B1%EC%9D%98-noopener-noreferrer-nofollow/
 noopener/noreferrer : 현재 사이트에서 기록된 개인정보(세션)를 링크 이동시 함께 넘어가지 않도록 방지 한다.(ex. 검색 하지 않은 상품을 추천하는 경우를 방지)
+
+#### .map 함수 사용 주의하여 null을 반환하는 구문을 세트로 사용한다.
+배열을 map 함수를 사용하여 컴포넌트 배열로 변환할 때 !articles를 조회하여 해당 값이 현재 null이 아닌지 검사해야 한다. 이 작업을 하지 않으면 아직 데이터가 없을 때 null에는 map 함수가 없기 때문에 랜더링 과정에서 오류가 발생한다. 그래서 애플리케이션이 제대로 나타나지 않고 흰 페이지만 보이게 된다.
+```
+if (!articles) {
+  return null;
+}
+
+{articles.map((article) => (
+  <NewsItem key={article.url} article={article} />
+))}
+
+```
