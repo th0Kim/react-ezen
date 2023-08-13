@@ -3,12 +3,17 @@ import axios from "axios";
 
 const App = () => {
   const [data, setData] = useState(null);
-  const onClick = () => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/todos/1") //데이터를 get하고 response에 전달
-      .then((response) => {
-        setData(response.data); //setData에 담기
-      });
+  const onClick = async () => {
+    try {
+      //성공
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/todos/1"
+      ); //데이터를 get하고 response에 전달
+      setData(response.data); //setData에 담기
+    } catch (e) {
+      //실패
+      console.log(e);
+    }
   };
 
   return (
