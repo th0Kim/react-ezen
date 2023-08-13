@@ -1043,3 +1043,7 @@ NewsList.js : API를 요청하고 뉴스 데이터가 들어 있는 배열 컴�
 ### 임시 이미지 적용해 볼 수 있는 url
 160x160 이미지
 https://via.placeholder.com/160
+
+### a태그 rel="" html5이후 업데이트 된 보안 강화 속성
+https://usingu.co.kr/frontend/html/rel%EC%86%8D%EC%84%B1%EC%9D%98-noopener-noreferrer-nofollow/
+noopener/noreferrer : 현재 사이트에서 기록된 개인정보(세션)를 링크 이동시 함께 넘어가지 않도록 방지 한다.(ex. 검색 하지 않은 상품을 추천하는 경우를 방지)
