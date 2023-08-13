@@ -33,15 +33,15 @@ const NewsItemBlock = styled.div`
 `;
 
 const NewsItem = ({ article }) => {
-  const { title, description, url, urlImage } = article;
+  const { title, description, url, urlToImage } = article;
 
   return (
     <NewsItemBlock>
-      {/* urlImage가 있으면 && */}
-      {urlImage && (
+      {/* urlToImage가 있으면 && */}
+      {urlToImage && (
         <div className="thumbnail">
           <a href={url} target="_blank" rel="noopener noreferrer">
-            <img src={urlImage} alt="thumbnail" />
+            <img src={urlToImage} alt="thumbnail" />
           </a>
         </div>
       )}
