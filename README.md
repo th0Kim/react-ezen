@@ -1063,5 +1063,18 @@ if (!articles) {
 
 ----- End of News
 
+## 리덕스...
 ### Context API 
 v16.3부터 많은 개선으로 사용하기 좋아짐
+
+context : 전역으로 단 한번에 원하는 값을 받아와서 사용 할 수 있다.
+색상을 props로 받아 오지 않고 ColorContext안에 있는 Consumer라는 컴포넌트를 통해 색상을 조회 
+이러한 패턴을 Function as a child, Render Props 라고 한다.
+```
+<!-- Function as a child, Render Props -->
+<ColorContext.Consumer>{(value) => (<div style={{width: "64px",height: "64px",background: value.color,}}/>)}</ColorContext.Consumer>
+```
+```
+<div>결과 : {children(5)}</div>
+<div>{value => 2*value}</div>
+```
