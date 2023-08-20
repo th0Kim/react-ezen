@@ -1300,3 +1300,28 @@ makeContainer(타깃 컴포넌트)
     initialState
   );
   ```
+
+### createAction 사용 하기
+```
+// 액션 생성
+const MY_ACTION = 'sample/MY_ACTION';
+// 액션 함수
+const myAction = createAction(MY_ACTION);
+// 액션 
+const action= myAction('hello world');
+/* 결과
+{ type: MY_ACTION, payload: 'hello world'}
+*/
+```
+
+#### 액션 생성 함수에서 받아온 파라미터를 그대로 payload를 넣지 않고 변형을 주고 싶은 경우 createAction 함수의 두번째 함수에 payload를 정의 하는 함수를 따로 선언 할 수 있다.
+```
+const MY_ACTION = 'sample/MY_ACTION';
+const myAction = createAction(MY_ACTION, 
+ text => `${text}!`
+);
+const action= myAction('hello world');
+/* 결과
+{ type: MY_ACTION, payload: 'hello world'}
+*/
+```
