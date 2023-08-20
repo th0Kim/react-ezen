@@ -1242,3 +1242,10 @@ unsubscribe();
 import counter, {increase, decrease } from './counter';
 
 combineReducers은 모듈 2개를 합친 것 => 단일 스토어
+
+
+#### 크롬 확장 프로그램 : Redux DevTools
+https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd/related
+
+확장 설치 + 터미널에 설치
+yarn add redux-devtools-extension
