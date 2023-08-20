@@ -1335,3 +1335,12 @@ payload만 써 있으면 payload에 포함 된 많은 값 중 어떤게 들어�
 ```
 [CHANGE_INPUT]: (state, { payload: input }) => ({ ...state, input })
 ```
+
+
+```
+// 이렇게 써도 문제는 없으나 payload 어떤값을 가져오는지 직관적이지 않음
+export const changeInput = createAction(CHANGE_INPUT);
+
+// (input) => input를 적어주어 직관적인으로 표시
+export const changeInput = createAction(CHANGE_INPUT, (input) => input);
+```
