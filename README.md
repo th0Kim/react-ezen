@@ -1237,3 +1237,8 @@ unsubscribe();
   src/containers 경로 : 리덕스와 연동 된 컨체이너 컴포넌트
 
 #### modules = 액션타입, 액션 생성 함수, 리듀서
+
+### 모듈 불러오기
+import counter, {increase, decrease } from './counter';
+
+combineReducers은 모듈 2개를 합친 것 => 단일 스토어
