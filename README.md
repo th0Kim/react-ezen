@@ -1231,3 +1231,7 @@ unsubscribe();
 ### CLI 환경 리덕스 환경
  > 리액트 리덕스 설치
  yarn add redux react-redux
+
+#### 컴포넌트 유형별 폴더 구분
+  src/components 경로 : UI에 관련 된 프레젠테이셔널 컴포넌트
+  src/containers 경로 : 리덕스와 연동 된 컨체이너 컴포넌트
