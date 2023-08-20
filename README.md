@@ -1171,3 +1171,24 @@ const listener = () => {
 const unsubscribe = store.subscribe(listener);
 unsubscribe();
 ```
+
+# 20230820
+
+----- 이제까지는 CLI 환경에서 작업(npm creat react-app project)
+- webpack 자동 설치 됨
+
+
+#### 리덕스 작업 시 환경 셋팅
+- webpack 필요 하기 때문에 
+- parcel 설치 필요(https://ko.parceljs.org/getting_started.html)
+  > 간단한 프로젝트 목적으로 설치
+  npm install -g parcel-bundler
+
+  > 폴더 생성
+  mkdir vanilla-redux
+
+  > vanilla-redux 폴더로 이동
+  cd vanilla-redux
+
+  > parcel pakage json 생성
+  npm add parcel-bundler
