@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import Counter from "../components/Counter"; //UI
+import { decrease, increase } from "../modules/counter"; //모듈 연결의 변수 연결
 
 const CounterContainer = ({ number, increase, decrease }) => {
   return (
@@ -13,10 +14,12 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchRoProps = (dispatch) => ({
   increase: () => {
-    console.log("increase");
+    // modules counter.js 연결
+    dispatch(increase());
   },
   decrease: () => {
-    console.log("decrease");
+    // modules counter.js 연결
+    dispatch(decrease());
   },
 });
 

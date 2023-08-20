@@ -1269,3 +1269,7 @@ mapDispatchToProps : 액션 생성 함수를 컴포넌트의 props로 넘겨주�
 const makeContainer = connect(mapStateToProps, mapDispatchToProps);
 makeContainer(타깃 컴포넌트)
 ```
+
+  #### App > CounterContainer > components/Counter , modules/counter
+  App.js에서 CounterContainer.js(UI 컴포넌트, 모듈 컴포넌트 불러옴)를 보여주고 
+  Countercontiner.js에서 UI 컴포넌트(components/Counter)와 모듈을 리덕스(connect)을 이용하여 모듈 액션(modules/counter)을 동작 할 수 있게 연결 한다.
