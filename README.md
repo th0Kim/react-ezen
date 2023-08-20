@@ -1200,3 +1200,6 @@ unsubscribe();
 
   > index.html , index.js 생성 후 parcel이 잘 작동 하는지 확인
   yarn parcel index.html
+
+  > 리덕스 라이브러리 설치
+  yarn add redux
