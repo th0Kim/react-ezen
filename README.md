@@ -1213,7 +1213,7 @@ unsubscribe();
 5. 리듀서 추가
   - ...state : 기존의 상태를 복사하여 사용하는 이뮤는 불변성 때문
 6. store 생성
-7. subscribe 구독(store의 내장 함수)
+7. subscribe 구독(store의 내장 함수) - 리액트 리덕스에서는 Provider로 사용한다.
 8. 디스패치(store의 내장 함수)
 
 #### 리덕스 세가지 규칙
