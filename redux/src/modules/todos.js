@@ -1,4 +1,5 @@
 import { createAction, handleActions } from "redux-actions";
+import { produce } from "immer";
 
 const CHANGE_INPUT = "todos/CHANGE_INPUT"; // "모듈명/액션명"
 const INSERT = "todos/INSERT";
@@ -84,24 +85,48 @@ const initialState = {
 // }
 //
 // redux-actions 변환
+// const todos = handleActions(
+//   {
+//     // action.payload 안에 포함 (action.id , action.input 등)
+//     [CHANGE_INPUT]: (state, { payload: input }) => ({ ...state, input }),
+//     [INSERT]: (state, { payload: todo }) => ({
+//       ...state,
+//       todos: state.todos.concat(todo),
+//     }),
+//     [TOGGLE]: (state, { payload: id }) => ({
+//       ...state,
+//       todos: state.todos.map((todo) =>
+//         todo.id === id ? { ...todo, done: !todo.done } : todo
+//       ),
+//     }),
+//     [REMOVE]: (state, { payload: id }) => ({
+//       ...state,
+//       todos: state.todos.filter((todo) => todo.id !== id),
+//     }),
+//   },
+//   initialState
+// );
+// redux-actions / immer
 const todos = handleActions(
   {
-    // action.payload 안에 포함 (action.id , action.input 등)
-    [CHANGE_INPUT]: (state, { payload: input }) => ({ ...state, input }),
-    [INSERT]: (state, { payload: todo }) => ({
-      ...state,
-      todos: state.todos.concat(todo),
-    }),
-    [TOGGLE]: (state, { payload: id }) => ({
-      ...state,
-      todos: state.todos.map((todo) =>
-        todo.id === id ? { ...todo, done: !todo.done } : todo
-      ),
-    }),
-    [REMOVE]: (state, { payload: id }) => ({
-      ...state,
-      todos: state.todos.filter((todo) => todo.id !== id),
-    }),
+    [CHANGE_INPUT]: (state, { payload: input }) =>
+      produce(state, (draft) => {
+        draft.input = input;
+      }),
+    [INSERT]: (state, { payload: todo }) =>
+      produce(state, (draft) => {
+        draft.todo.push(todo);
+      }),
+    [TOGGLE]: (state, { payload: id }) =>
+      produce(state, (draft) => {
+        const todo = draft.todos.find((todo) => todo.id === id);
+        todo.done = !todo.done;
+      }),
+    [REMOVE]: (state, { payload: id }) =>
+      produce(state, (draft) => {
+        const index = draft.todo.findIndex((todo) => todo.id === id);
+        draft.todos.splice(index, 1);
+      }),
   },
   initialState
 );
