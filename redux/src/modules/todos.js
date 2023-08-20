@@ -48,7 +48,7 @@ function todos(state = initialState, action) {
     case INSERT:
       return {
         ...state,
-        todos: state.todos.concat(action.todo),
+        todos: state.todos.concat(action.todo), // immer 라이브러리가 없음으로 불변성을 위해 .concat을 씀
       };
     case TOGGLE:
       return {
