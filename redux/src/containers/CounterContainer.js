@@ -12,7 +12,7 @@ const CounterContainer = ({ number, increase, decrease }) => {
 //   number: state.counter.number,
 // });
 
-// const mapDispatchRoProps = (dispatch) => ({
+// const mapDispatchToProps = (dispatch) => ({
 //   increase: () => {
 //     // modules counter.js 연결
 //     dispatch(increase());
@@ -23,7 +23,7 @@ const CounterContainer = ({ number, increase, decrease }) => {
 //   },
 // });
 
-// export default connect(mapStateToProps, mapDispatchRoProps)(CounterContainer);
+// export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer);
 
 // 줄 11 ~ 26 : 간소화 1
 // export default connect(
