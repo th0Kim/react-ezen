@@ -1,4 +1,4 @@
-import { legacy_createStore as creatsStore } from "redux";
+import { legacy_createStore as createStore } from "redux";
 
 // DOM 노드를 가르키는 값 선언
 const divToggle = document.querySelector(".toggle");
@@ -17,13 +17,13 @@ const increase = (difference) => ({ type: INCREASE, difference });
 const decrease = () => ({ type: DECREASE });
 
 // 초기값 설정
-const initicalState = {
+const initialState = {
   toggle: false,
   counter: 0,
 };
 
 // 리듀서
-function reducer(state = initicalState, action) {
+function reducer(state = initialState, action) {
   //action.type에 따라 다른 작업을 처리함
   switch (action.type) {
     case TOGGLE_SWITCH:
@@ -47,7 +47,7 @@ function reducer(state = initicalState, action) {
 }
 
 // store 만들기
-const store = creatsStore(reducer);
+const store = createStore(reducer);
 
 // 이 할수는 상태가 업데이트 될 때 마다 호출
 const render = () => {
@@ -64,12 +64,12 @@ render();
 store.subscribe(render); // 상태가 업데이트 될 때 마다 render 함수 호출
 
 // 디스패치
-divToggle.onClick = () => {
+divToggle.onclick = () => {
   store.dispatch(toggleSwitch());
 };
-btnIncrease.onClick = () => {
+btnIncrease.onclick = () => {
   store.dispatch(increase(1));
 };
-btnDecrease.onClick = () => {
+btnDecrease.onclick = () => {
   store.dispatch(decrease());
 };
