@@ -1227,4 +1227,7 @@ unsubscribe();
 
 ----- End of vanilla-redux
 
+
 ### CLI 환경 리덕스 환경
+ > 리액트 리덕스 설치
+ yarn add redux react-redux
