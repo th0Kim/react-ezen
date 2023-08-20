@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Counter from "../components/Counter";
+import Counter from "../components/Counter"; //UI
 
 const CounterContainer = ({ number, increase, decrease }) => {
   return (
@@ -7,7 +7,7 @@ const CounterContainer = ({ number, increase, decrease }) => {
   );
 };
 
-const mapStateToprops = (state) => ({
+const mapStateToProps = (state) => ({
   number: state.counter.number,
 });
 
@@ -20,4 +20,4 @@ const mapDispatchRoProps = (dispatch) => ({
   },
 });
 
-export default connect(mapStateToprops, mapDispatchRoProps)(CounterContainer);
+export default connect(mapStateToProps, mapDispatchRoProps)(CounterContainer);
