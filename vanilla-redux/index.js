@@ -61,3 +61,4 @@ const render = () => {
 };
 
 render();
+store.subscribe(render); // 상태가 업데이트 될 때 마다 render 함수 호출
