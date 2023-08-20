@@ -25,17 +25,25 @@ const CounterContainer = ({ number, increase, decrease }) => {
 
 // export default connect(mapStateToProps, mapDispatchRoProps)(CounterContainer);
 
-// 줄 11 ~ 26 : 간소화
+// 줄 11 ~ 26 : 간소화 1
+// export default connect(
+//   (state) => ({
+//     number: state.counter.number,
+//   }),
+//   (dispatch) => ({
+//     increase: () => {
+//       dispatch(increase());
+//     },
+//     decrease: () => {
+//       dispatch(decrease());
+//     },
+//   })
+// )(CounterContainer);
+
+// 줄 28 ~ 41 : 간소화 2
 export default connect(
   (state) => ({
     number: state.counter.number,
   }),
-  (dispatch) => ({
-    increase: () => {
-      dispatch(increase());
-    },
-    decrease: () => {
-      dispatch(decrease());
-    },
-  })
+  { increase, decrease }
 )(CounterContainer);
