@@ -1325,3 +1325,13 @@ const action= myAction('hello world');
 { type: MY_ACTION, payload: 'hello world'}
 */
 ```
+
+### 개발자간 소통의 목적
+payload만 써 있으면 payload에 포함 된 많은 값 중 어떤게 들어오는지 알기 어려움
+```
+ [CHANGE_INPUT]: (state, action) => ({ ...state, input: action.payload })
+```
+위 처럼 action으로만 쓰지 않고 payload의 input을 가져온다고 알 수 있도록 직관적으로 표시
+```
+[CHANGE_INPUT]: (state, { payload: input }) => ({ ...state, input })
+```
