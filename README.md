@@ -1194,3 +1194,6 @@ unsubscribe();
 
   > parcel pakage json 생성
   npm add parcel-bundler
+
+  > pakage.json 줄 5 ~ 16 설정 추가
+  npm init -y
