@@ -1176,6 +1176,8 @@ unsubscribe();
 
 ----- 이제까지는 CLI 환경에서 작업(npm creat react-app project)
 - webpack 자동 설치 됨
+- CLI는 프로젝트가 무거운 편
+- 프로젝트 마다 다르게 CLI 또는 parcel 등으로 환경 셋팅 함
 
 
 #### 리덕스 작업 시 환경 셋팅
