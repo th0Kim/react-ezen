@@ -1276,6 +1276,27 @@ makeContainer(타깃 컴포넌트)
 
 
 ### redux-actions를 사용하면 액션생성 함수를 더 짧은 형태로 작성 할 수 있다.
+  > 해당 프로젝트에서 npm 설치
   npm add redux-actions
+  > 사용 방법 : switch.case -> handleActions 함수로 사용 가능
+  ```
+  import { createAction, handleActions } from "redux-actions";
+  // 액션 객체 생성
+  const INCREASE = "counter/INCREASE";
+  const DECREASE = "counter/DECREASE";
 
-  switch.case -> handleActions 함수로 사용 가능
+  // redux-action 액션 생성 함수
+  export const increase = () => createAction(INCREASE);
+  export const decrease = () => createAction(DECREASE);
+
+  //리듀서 with redux-action handleActions
+  const counter = handleActions(
+    // 첫번째 매개변수 : 각 액션에 대한 업데이트 함수
+    {
+      [INCREASE]: (state, action) => ({ number: state.number + 1 }),
+      [DECREASE]: (state, action) => ({ number: state.number - 1 }),
+    },
+    // 첫번째 매개변수 : 초기 상태
+    initialState
+  );
+  ```
