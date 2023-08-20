@@ -47,7 +47,7 @@ function reducer(state = initialState, action) {
 }
 
 // store 만들기
-const store = createStore(reducer);
+const store = createStore(reducer); //리액트 리덕스 라이브러리를 사용하게 되면 사용하지 않음
 
 // 이 할수는 상태가 업데이트 될 때 마다 호출
 const render = () => {
@@ -68,7 +68,7 @@ divToggle.onclick = () => {
   store.dispatch(toggleSwitch());
 };
 btnIncrease.onclick = () => {
-  store.dispatch(increase(1));
+  store.dispatch(increase(1)); // difference 매개값으로 1 사용
 };
 btnDecrease.onclick = () => {
   store.dispatch(decrease());
