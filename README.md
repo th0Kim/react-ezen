@@ -1203,3 +1203,6 @@ unsubscribe();
 
   > 리덕스 라이브러리 설치
   yarn add redux
+
+
+### 리덕스 환경
