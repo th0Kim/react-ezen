@@ -25,11 +25,9 @@ let id = 3;
 //
 // redux-actions 변환
 export const insert = createAction(INSERT, (text) => ({
-  todo: {
-    id: id++,
-    text,
-    done: false,
-  },
+  id: id++,
+  text,
+  done: false,
 }));
 
 // export const toggle = (id) => ({ type: TOGGLE, id });
@@ -109,13 +107,14 @@ const initialState = {
 // redux-actions / immer
 const todos = handleActions(
   {
+    // action.payload = action.id, action.todo
     [CHANGE_INPUT]: (state, { payload: input }) =>
       produce(state, (draft) => {
         draft.input = input;
       }),
     [INSERT]: (state, { payload: todo }) =>
       produce(state, (draft) => {
-        draft.todo.push(todo);
+        draft.todos.push(todo);
       }),
     [TOGGLE]: (state, { payload: id }) =>
       produce(state, (draft) => {
@@ -124,7 +123,7 @@ const todos = handleActions(
       }),
     [REMOVE]: (state, { payload: id }) =>
       produce(state, (draft) => {
-        const index = draft.todo.findIndex((todo) => todo.id === id);
+        const index = draft.todos.findIndex((todo) => todo.id === id);
         draft.todos.splice(index, 1);
       }),
   },

@@ -16,8 +16,8 @@ const TodoItem = ({ todo, onToggle, onRemove }) => {
 };
 
 const Todos = ({
-  input, //입력 값
-  todos, // 할 일 목록
+  input, // 입력하는 텍스트
+  todos, // 할일 목록이 들어있는 객체
   onChangeInput,
   onInsert,
   onToggle,

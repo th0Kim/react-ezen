@@ -14,9 +14,9 @@ const TodosContainer = ({
     <Todos
       input={input}
       todos={todos}
-      changeInput={changeInput}
-      onToggle={toggle}
+      onChangeInput={changeInput}
       onInsert={insert}
+      onToggle={toggle}
       onRemove={remove}
     />
   );
