@@ -46,10 +46,12 @@ function reducer(state = initicalState, action) {
   }
 }
 
+// store 만들기
 const store = creatsStore(reducer);
 
+// 이 할수는 상태가 업데이트 될 때 마다 호출
 const render = () => {
-  const state = store.getState();
+  const state = store.getState(); // 현재 상태를 불러온다.
   if (state.toggle) {
     divToggle.classList.add("active");
   } else {
