@@ -8,3 +8,8 @@ const btnDecrease = document.querySelector("#decrease");
 const TOGGLE_SWITCH = "TOGGLE_SWITCH";
 const INCREASE = "INCREASE";
 const DECREASE = "DECREASE";
+
+// 액션 생성 함수
+const toggleSwitch = () => ({ type: TOGGLE_SWITCH });
+const increase = (difference) => ({ type: INCREASE, difference });
+const decrease = () => ({ type: DECREASE });
