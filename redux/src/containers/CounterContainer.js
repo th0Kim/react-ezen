@@ -8,19 +8,34 @@ const CounterContainer = ({ number, increase, decrease }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  number: state.counter.number,
-});
+// const mapStateToProps = (state) => ({
+//   number: state.counter.number,
+// });
 
-const mapDispatchRoProps = (dispatch) => ({
-  increase: () => {
-    // modules counter.js 연결
-    dispatch(increase());
-  },
-  decrease: () => {
-    // modules counter.js 연결
-    dispatch(decrease());
-  },
-});
+// const mapDispatchRoProps = (dispatch) => ({
+//   increase: () => {
+//     // modules counter.js 연결
+//     dispatch(increase());
+//   },
+//   decrease: () => {
+//     // modules counter.js 연결
+//     dispatch(decrease());
+//   },
+// });
 
-export default connect(mapStateToProps, mapDispatchRoProps)(CounterContainer);
+// export default connect(mapStateToProps, mapDispatchRoProps)(CounterContainer);
+
+// 줄 11 ~ 26 : 간소화
+export default connect(
+  (state) => ({
+    number: state.counter.number,
+  }),
+  (dispatch) => ({
+    increase: () => {
+      dispatch(increase());
+    },
+    decrease: () => {
+      dispatch(decrease());
+    },
+  })
+)(CounterContainer);
