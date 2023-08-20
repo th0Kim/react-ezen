@@ -19,3 +19,27 @@ const initicalState = {
   toggle: false,
   counter: 0,
 };
+
+// 리듀서
+function reduser(state = initicalState, action) {
+  //action.type에 따라 다른 작업을 처리함
+  switch (action.type) {
+    case TOGGLE_SWITCH:
+      return {
+        ...state,
+        toggle: !state.toggle,
+      };
+    case INCREASE:
+      return {
+        ...state,
+        counter: state.counter + action.difference,
+      };
+    case DECREASE:
+      return {
+        ...state,
+        counter: state.counter - 1,
+      };
+    default:
+      return state;
+  }
+}
