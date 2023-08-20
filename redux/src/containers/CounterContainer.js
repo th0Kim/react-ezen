@@ -42,8 +42,10 @@ const CounterContainer = ({ number, increase, decrease }) => {
 
 // 줄 28 ~ 41 : 간소화 2
 export default connect(
+  // 상태
   (state) => ({
     number: state.counter.number,
   }),
+  // 액션
   { increase, decrease }
 )(CounterContainer);
