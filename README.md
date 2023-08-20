@@ -1205,6 +1205,6 @@ unsubscribe();
   yarn add redux
 
 
-### 리덕스 환경
-1. DOM 노드를 가르키는 값 선언(react 언어가 설치 안되어 있음으로 javascript 문법을 사용 함)
-2. 
+### 리덕스 환경 Javascript 작성 : react 언어가 설치 안되어 있음으로 javascript 문법을 사용
+1. DOM 노드를 가르키는 값 선언
+2. 액션 선언
