@@ -1,3 +1,5 @@
+import { legacy_createStore as creatsStore } from "redux";
+
 // DOM 노드를 가르키는 값 선언
 const divToggle = document.querySelector(".toggle");
 const counter = document.querySelector("h1");
@@ -21,7 +23,7 @@ const initicalState = {
 };
 
 // 리듀서
-function reduser(state = initicalState, action) {
+function reducer(state = initicalState, action) {
   //action.type에 따라 다른 작업을 처리함
   switch (action.type) {
     case TOGGLE_SWITCH:
@@ -43,3 +45,17 @@ function reduser(state = initicalState, action) {
       return state;
   }
 }
+
+const store = creatsStore(reducer);
+
+const render = () => {
+  const state = store.getState();
+  if (state.toggle) {
+    divToggle.classList.add("active");
+  } else {
+    divToggle.classList.remove("active");
+  }
+  counter.innerText = state.counter;
+};
+
+render();
