@@ -1197,3 +1197,6 @@ unsubscribe();
 
   > pakage.json 줄 5 ~ 16 설정 추가
   npm init -y
+
+  > index.html , index.js 생성 후 parcel이 잘 작동 하는지 확인
+  yarn parcel index.html
