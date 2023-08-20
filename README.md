@@ -1273,3 +1273,9 @@ makeContainer(타깃 컴포넌트)
   #### App > CounterContainer > components/Counter , modules/counter
   App.js에서 CounterContainer.js(UI 컴포넌트, 모듈 컴포넌트 불러옴)를 보여주고 
   Countercontiner.js에서 UI 컴포넌트(components/Counter)와 모듈을 리덕스(connect)을 이용하여 모듈 액션(modules/counter)을 동작 할 수 있게 연결 한다.
+
+
+### redux-actions를 사용하면 액션생성 함수를 더 짧은 형태로 작성 할 수 있다.
+  npm add redux-actions
+
+  switch.case -> handleActions 함수로 사용 가능
