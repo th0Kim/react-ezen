@@ -1,5 +1,3 @@
-import React from "react";
-
 const TodoItem = ({ todo, onToggle, onRemove }) => {
   return (
     <div>
@@ -17,7 +15,7 @@ const TodoItem = ({ todo, onToggle, onRemove }) => {
   );
 };
 
-const Todo = ({
+const Todos = ({
   input, //입력 값
   todos, // 할 일 목록
   onChangeInput,
@@ -28,31 +26,27 @@ const Todo = ({
   const onSubmit = (e) => {
     e.preventDefault();
     onInsert(input);
-    onChangeInput(""); //등록 후 인풋 추가
+    onChangeInput(""); // 등록후 인풋 초기화
   };
-
   const onChange = (e) => onChangeInput(e.target.value);
-
   return (
-    <>
+    <div>
+      <form onSubmit={onSubmit}>
+        <input value={input} onChange={onChange} />
+        <button type="submit">등록</button>
+      </form>
       <div>
-        <form onSubmit={onSubmit}>
-          <input value={input} onChange={onChange} />
-          <button type="submit">등록</button>
-        </form>
-        <div>
-          {todos.map((todo) => (
-            <TodoItem
-              todo={todo}
-              key={todo.id}
-              onToggle={onToggle}
-              onRemove={onRemove}
-            />
-          ))}
-        </div>
+        {todos.map((todo) => (
+          <TodoItem
+            todo={todo}
+            key={todo.id}
+            onToggle={onToggle}
+            onRemove={onRemove}
+          />
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 
-export default Todo;
+export default Todos;
