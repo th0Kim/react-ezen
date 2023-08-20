@@ -62,3 +62,14 @@ const render = () => {
 
 render();
 store.subscribe(render); // 상태가 업데이트 될 때 마다 render 함수 호출
+
+// 디스패치
+divToggle.onClick = () => {
+  store.dispatch(toggleSwitch());
+};
+btnIncrease.onClick = () => {
+  store.dispatch(increase(1));
+};
+btnDecrease.onClick = () => {
+  store.dispatch(decrease());
+};
