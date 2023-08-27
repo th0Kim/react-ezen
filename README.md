@@ -1421,3 +1421,21 @@ index.js의 store={store} 단일 스토어로 사용하기 위해 modules/index.
 
 리액트 프로젝트에서 리덕스를 사용하고 있으며 이러한 비동기 작업을 관리 해야 한다면,
 '미들웨어(middleware)' 사용하여 효율적이고 편하게 상태 관리 가능
+
+
+#### 리액트 미들웨어 (middleware/src/lib/loggerMiddleware.js)
+액션이 디스패치 될 때 마다 액션의 정보와 액션이 디스패치 되기 전후의 상태를 콘솔에 보여주는 로깅 미들웨어를 작성
+```
+const loggerMiddleware = store => next => action => {
+  // 미들웨어 기본구조
+}
+
+// 풀이
+const loggerMiddleware = function loggerMiddleware(store) { //store: 리덕스 스토어의 인스턴스
+  return function(next) {    // next : 다음 미들웨어 or 리듀서에게 전달
+    return function(action) {     // action : 디스패치된 액션
+      //미들웨어 기본 구조
+    } 
+  }
+}
+```

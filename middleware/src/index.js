@@ -3,13 +3,18 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { legacy_createStore } from "redux";
+import { applyMiddleware, legacy_createStore } from "redux";
 import rootReducer from "./modules";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
+import loggerMiddleware from "./lib/loggerMiddleware";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const store = legacy_createStore(rootReducer, composeWithDevTools); //스토어 생성
+const store = legacy_createStore(
+  rootReducer,
+  // composeWithDevTools,
+  applyMiddleware(loggerMiddleware) //console로 확인 가능
+); //스토어 생성
 root.render(
   // 공급자 Provider
   <Provider store={store}>
