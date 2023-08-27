@@ -1353,3 +1353,11 @@ export const changeInput = createAction(CHANGE_INPUT, (input) => input);
   ```
   const 결과 = useSelector(상태 선택 함수);
   ```
+
+  #### useDispatch라는 hook은 컴포넌트 내부에서 스토어의 내장 함수 dispatch를 사용 할 수 있게 해준다. 컨테이너 컴포넌트에서 액션을 디스패치해야 할 때 사용하면 된다.
+  ```
+  const dispatch = useDispatch();
+  dispatch({type: 'SAMPLE_ACTION});
+  ```
+
+  

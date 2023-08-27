@@ -1,6 +1,6 @@
-import { connect, useSelector } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import Counter from "../components/Counter"; //UI
-// import { decrease, increase } from "../modules/counter"; //모듈 연결의 변수 연결
+import { decrease, increase } from "../modules/counter"; //모듈 연결의 변수 연결
 
 // const CounterContainer = ({ number, increase, decrease }) => {
 //   return (
@@ -50,12 +50,18 @@ import Counter from "../components/Counter"; //UI
 //   { increase, decrease }
 // )(CounterContainer);
 
-// connect함수를 쓰지 않고 useSelector Hooks를 사용한 방법으로 리덕스 상태 확인
 import React from "react";
 
 const CounterContainer = () => {
-  const number = useSelector((state) => state.counter.number);
-  return <Counter number={number} />;
+  const number = useSelector((state) => state.counter.number); // connect함수를 쓰지 않고 useSelector Hooks를 사용한 방법으로 리덕스 상태 확인
+  const dispatch = useDispatch(); // connect함수를 쓰지 않고 useDispatch Hooks를 사용한 방법으로 액션을 디스패치
+  return (
+    <Counter
+      number={number}
+      onIncrease={() => dispatch(increase())}
+      onDecrease={() => dispatch(decrease())}
+    />
+  );
 };
 
 export default CounterContainer;
