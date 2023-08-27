@@ -1,23 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CounterContainer from "./containers/CounterContainer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* 리덕스에서는 containers 컴포넌트가 중심임 app에 직접 연결하는 파일 */}
+      <CounterContainer />
     </div>
   );
 }
