@@ -1,4 +1,3 @@
-<!-- prettier-ignore -->
 # 20230702
 
 ### yarn : npm을 대체하는 패키지 관리자 도구 - npm은 프로젝트 버젼을 맞춰줘야 하는 단점
@@ -1344,3 +1343,7 @@ export const changeInput = createAction(CHANGE_INPUT);
 // (input) => input를 적어주어 직관적인으로 표시
 export const changeInput = createAction(CHANGE_INPUT, (input) => input);
 ```
+
+
+# 20230827
+
