@@ -1439,3 +1439,8 @@ const loggerMiddleware = function loggerMiddleware(store) { //store: 리덕스 �
   }
 }
 ```
+
+### redux-logger 미들웨어 : 실무에서 많이 사용하는 라이브러리
+```
+ yarn add redux-logger
+```
