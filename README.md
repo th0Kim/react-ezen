@@ -1441,6 +1441,12 @@ const loggerMiddleware = function loggerMiddleware(store) { //store: 리덕스 �
 ```
 
 ### redux-logger 미들웨어 : 실무에서 많이 사용하는 라이브러리
+> loggerMiddleware 보다 훨씬 잘 만들어진 라이브러리
 ```
  yarn add redux-logger
 ```
+  #### 미들웨어는 여러 종류의 작업을 처리 가능.
+  1. 스프레시 화면(로딩)
+  2. 특정 조건에 따른 액션 정보를 가로채서 변경 후 리듀서에 전달
+  3. 특정 액션에 기반하여 새로운 액션을 여러번 디스패치 할 수도 있다.
+  4. 위 처럼 미들웨어 속성을 사용하여 네트워크 요청과 같은 비동기 작업을 관리하여 유용하게 사용 할 수 있다.
