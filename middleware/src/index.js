@@ -8,12 +8,15 @@ import rootReducer from "./modules";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import loggerMiddleware from "./lib/loggerMiddleware";
+import { createLogger } from "redux-logger"; //redux-logger
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const logger = createLogger(); //redux-logger
 const store = legacy_createStore(
   rootReducer,
   // composeWithDevTools,
-  applyMiddleware(loggerMiddleware) //console로 확인 가능
+  // applyMiddleware(loggerMiddleware) //console로 확인 가능
+  applyMiddleware(logger) //redux-logger console로 확인 가능
 ); //스토어 생성
 root.render(
   // 공급자 Provider
