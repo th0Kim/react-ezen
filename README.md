@@ -1360,4 +1360,17 @@ export const changeInput = createAction(CHANGE_INPUT, (input) => input);
   dispatch({type: 'SAMPLE_ACTION});
   ```
 
+  #### useCallback (useDispatch 쓸 때 재사용 함수 같이 쓰기)
+  ```
+  const onIncrease = useCallback(() => dispatch(increase()), [dispatch]); // onIncrease 객체를 사용하면 increase() 함수를 재사용(콜백함수) 한다. ,[dispatch]에 해당하는 내용이 업데이트
+  ```
+  ```
+  <!-- 예시 -->
+  const dispatch = useDispatch();// hooks
+  const onIncrease = useCallback(() => dispatch(increase()), [dispatch]);// hooks
+  const onDecrease = useCallback(() => dispatch(decrease()), [dispatch]);// hooks
   
+  return (
+    <Counter number={number} onIncrease={onIncrease} onDecrease={onDecrease} />
+  );
+  ```
