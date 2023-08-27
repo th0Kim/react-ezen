@@ -6,9 +6,10 @@ import reportWebVitals from "./reportWebVitals";
 import { legacy_createStore } from "redux";
 import rootReducer from "./modules";
 import { Provider } from "react-redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const store = legacy_createStore(rootReducer); //스토어 생성
+const store = legacy_createStore(rootReducer, composeWithDevTools); //스토어 생성
 root.render(
   // 공급자 Provider
   <Provider store={store}>
