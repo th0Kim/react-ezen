@@ -1389,3 +1389,6 @@ export const changeInput = createAction(CHANGE_INPUT, (input) => input);
   connect 함수를 사용하여 컨테이너 컴포넌트를 만들었을 경우, 해당 컨테이너 컴포넌트의 부모 컴포넌트가 리랜더링 될때 해당 컨테이너 컴포넌트의 props가 바뀌지 않았다면 리랜더링이 자동으로 방지되어 성능 최적화 됨.
 
   반면, hook을 사용하여 리덕스 상태를 조회했을 때 이 최적화 작업이 자동으로 이뤄지지 않아 성능 최적화를 위해 React.memo를 컨테이버 컴포넌트에 사용 필요.
+
+
+----- End of redux
