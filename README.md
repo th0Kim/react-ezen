@@ -1382,5 +1382,10 @@ export const changeInput = createAction(CHANGE_INPUT, (input) => input);
 
   ### 컨테이너 컴포넌트/리덕스 스토어 연결하여 '상태 확인/액션/디스패치' 방법
   1. connect 사용
-  2. useSelector/useDispatch/useCallback 세트로 사용
-  3. useSelector/useActions 세트로 사용
+  2. useSelector/useDispatch/useCallback 세트로 사용 + React.memo
+  3. useSelector/useActions 세트로 사용 + React.memo
+
+  ### connect 함수와 hook(useSelector, useDispatch)를 사용 할 때 차이점
+  connect 함수를 사용하여 컨테이너 컴포넌트를 만들었을 경우, 해당 컨테이너 컴포넌트의 부모 컴포넌트가 리랜더링 될때 해당 컨테이너 컴포넌트의 props가 바뀌지 않았다면 리랜더링이 자동으로 방지되어 성능 최적화 됨.
+
+  반면, hook을 사용하여 리덕스 상태를 조회했을 때 이 최적화 작업이 자동으로 이뤄지지 않아 성능 최적화를 위해 React.memo를 컨테이버 컴포넌트에 사용 필요.
