@@ -1392,3 +1392,7 @@ export const changeInput = createAction(CHANGE_INPUT, (input) => input);
 
 
 ----- End of redux
+
+cd middleware
+yarn add redux react-redux redux-actions
+
