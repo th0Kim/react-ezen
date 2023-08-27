@@ -4,6 +4,7 @@ import { getPost, getUsers } from "../modules/sample";
 import Sample from "../components/Sample";
 
 const { useEffect } = React;
+// ../components/Sample UI 연결
 const SampleContainer = ({
   getPost,
   getUsers,
@@ -25,6 +26,7 @@ const SampleContainer = ({
     />
   );
 };
+// ../modules/sample connect로 연결
 export default connect(
   ({ sample }) => ({
     post: sample.post,
@@ -33,7 +35,6 @@ export default connect(
     loadingUsers: sample.loading.GET_USERS,
   }),
   {
-    // ../modules/sample
     getPost,
     getUsers,
   }
