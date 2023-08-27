@@ -541,6 +541,15 @@ console.log(numbers);
 ----- End of Hello-react
 
 ## Hooks (v16.8 이후) : 리액트 내장함수 use~
+```
+// 내장 함수 useEffect 호출 방법
+import React from "react";
+const { useEffect } = React;
+
+//또는
+
+import React, { useEffect } from "react";
+```
 
 1. useState : 상태 관리의 가장 기본적인 hook
    -> 하나의 상태값만 관리 할 수 있다. 관리 할 상태가 여러개라면 useState를 여러번 사용한다.
@@ -1490,6 +1499,10 @@ const sampleThunk = () => (dispatch, getState) => {
 }
 
 ```
+* redux-thunk 라이브러리를 이용하면 dispatch를 객체로 가져오지 않고 비동기 함수로 가져올 수 있다.
+비동기 함수로 가져옴으로 로딩화면을 비동기로 처리 할 수 있다.
+참고 : middleware > SampleContainer.js
+
 
 #### 데이터 리소스
 https://jsonplaceholder.typicode.com/
