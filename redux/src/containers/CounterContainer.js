@@ -1,12 +1,12 @@
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import Counter from "../components/Counter"; //UI
-import { decrease, increase } from "../modules/counter"; //모듈 연결의 변수 연결
+// import { decrease, increase } from "../modules/counter"; //모듈 연결의 변수 연결
 
-const CounterContainer = ({ number, increase, decrease }) => {
-  return (
-    <Counter number={number} onIncrease={increase} onDecrease={decrease} />
-  );
-};
+// const CounterContainer = ({ number, increase, decrease }) => {
+//   return (
+//     <Counter number={number} onIncrease={increase} onDecrease={decrease} />
+//   );
+// };
 
 // const mapStateToProps = (state) => ({
 //   number: state.counter.number,
@@ -41,11 +41,21 @@ const CounterContainer = ({ number, increase, decrease }) => {
 // )(CounterContainer);
 
 // 줄 28 ~ 41 : 간소화 2
-export default connect(
-  // 상태
-  (state) => ({
-    number: state.counter.number,
-  }),
-  // 액션
-  { increase, decrease }
-)(CounterContainer);
+// export default connect(
+//   // 상태
+//   (state) => ({
+//     number: state.counter.number,
+//   }),
+//   // 액션
+//   { increase, decrease }
+// )(CounterContainer);
+
+// connect함수를 쓰지 않고 useSelector Hooks를 사용한 방법으로 리덕스 상태 확인
+import React from "react";
+
+const CounterContainer = () => {
+  const number = useSelector((state) => state.counter.number);
+  return <Counter number={number} />;
+};
+
+export default CounterContainer;

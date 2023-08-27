@@ -1347,3 +1347,9 @@ export const changeInput = createAction(CHANGE_INPUT, (input) => input);
 
 # 20230827
 
+### Hooks를 사용하여 컨테이너 컴포넌트 만들기
+
+  #### connect 함수를 사용하지 않더라도 리덕스 상태를 확인 할 수 있는 Hooks
+  ```
+  const 결과 = useSelector(상태 선택 함수);
+  ```
