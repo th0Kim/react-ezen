@@ -1246,13 +1246,18 @@ combineReducers은 모듈 2개를 합친 것 => 단일 스토어
 #### 크롬 확장 프로그램 : Redux DevTools 사용 방법
 https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd/related
 
-  확장 설치 + 터미널에 설치
-  yarn add redux-devtools-extension
 
   ```
-  //참고 src/index.js
-  import { composeWithDevTools } from "redux-devtools-extension";
-  const store = createStore(rootReducer, composeWithDevTools());
+  // 1. 크롬 확장 프로그램 설치 후 
+  // 2. 프로젝트에 devtools 설치
+  yarn add redux-devtools-extension
+
+  // pakage.json (설치 정상 확인)
+  "redux-devtools-extension": "^2.13.9",
+
+  // 3.src/index.js (프로젝트에 적용)
+  import { compseWithDevTools } from "redux-devtools-extension";
+  const store = createStore(rootReducer, comoposeWithDevTools());
   ```
 
 ### 컴포넌트와 리덕스 연동 방법
@@ -1399,3 +1404,4 @@ yarn add redux react-redux redux-actions
 ```
 
 index.js의 store={store} 단일 스토어로 사용하기 위해 modules/index.js에 모듈을 불러와 사용한다
+
