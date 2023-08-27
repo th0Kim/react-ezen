@@ -1490,6 +1490,7 @@ const sampleThunk = () => (dispatch, getState) => {
 
 ```
 
-
+#### 데이터 리소스
+https://jsonplaceholder.typicode.com/
 
 
