@@ -73,4 +73,4 @@ const TodosContainer = () => {
   );
 };
 
-export default TodosContainer;
+export default React.memo(TodosContainer); //컴포넌트 최적화 방법
