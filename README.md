@@ -1393,6 +1393,9 @@ export const changeInput = createAction(CHANGE_INPUT, (input) => input);
 
 ----- End of redux
 
+```
 cd middleware
 yarn add redux react-redux redux-actions
+```
 
+index.js의 store={store} 단일 스토어로 사용하기 위해 modules/index.js에 모듈을 불러와 사용한다
