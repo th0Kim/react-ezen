@@ -1450,3 +1450,43 @@ const loggerMiddleware = function loggerMiddleware(store) { //store: 리덕스 �
   2. 특정 조건에 따른 액션 정보를 가로채서 변경 후 리듀서에 전달
   3. 특정 액션에 기반하여 새로운 액션을 여러번 디스패치 할 수도 있다.
   4. 위 처럼 미들웨어 속성을 사용하여 네트워크 요청과 같은 비동기 작업을 관리하여 유용하게 사용 할 수 있다.
+
+
+### redux-thunk : 비동기 처리를 위한 미들웨어
+객체가 아닌 함수형태의 액션을 디스패치 할 수 있게 해준다.
+thunk는 특정 작업을 나중에 할 수 있도록 미루기 위해 함수 형태로 감싼 것을 의미한다.
+```
+const addOne = x => x+1;
+addOne(1);
+```
+```
+const addOne = x => x+1;
+function addOneThunk(x) {
+  const thunk = () => addOne(x);
+  return thunk;
+}
+
+// 화살표 함수로 변환
+const addOneThunk = x => () => addOne(x);
+
+//1초 뒤로 넘기기
+const fn = addOneThunk(1);
+setTimeout(()=> {
+  const value = fn();
+  console.log(value);
+}, 1000);
+```
+
+#### thunk 함수를 만들어서 디스패치 할 수 있다. 리덕스 미들웨어가 그 함수를 전달 받아 store의 dispatch와 getState를 파라미터로 넣어서 호출해준다.
+예를 들면
+```
+const sampleThunk = () => (dispatch, getState) => {
+  //현재 상태를 참조 할 수 있고,
+  //새 액션을 디스패치 할 수도 있다.
+}
+
+```
+
+
+
+
