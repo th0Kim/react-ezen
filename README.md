@@ -1550,6 +1550,15 @@ https://jsonplaceholder.typicode.com/
   },
   ```
 
+  #### 모듈은 ESM 시스템
+  ESM : ECMAScript(javascript 신규 채택 기간)
+  - node.js는 문법 기준이 ESM이 아니라 CJS(CommonJS)으로 ESM을 쓸거다 라고 pakage.json에 설정 사항을 작성
+  ```
+  "type": "module"
+  ```
+
+
+
 ## React app
 - 개발 소스 하나로 ios/android 환경에서 사용 할 수 있다.(javascript의 확장성)
 
