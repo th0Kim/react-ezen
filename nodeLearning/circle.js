@@ -9,4 +9,4 @@ function getCircumference(radius) {
   return 2 * PI * radius;
 }
 
-export { PI, getArea, getCircumference }; //다른 파일에서 사용 할 수 있도록 내보내기
+export default { PI, getArea, getCircumference }; //다른 파일에서 사용 할 수 있도록 내보내기
