@@ -1588,7 +1588,36 @@ sumGenerator 만들어졌다
 {value: undefined, done: true} //true : 종료
 
 ```
+```
+// 사용방법 ex3
+function* watchGenerator(){
+    console.log('모니터링 중...')
+    let prevAction = null;
+    while(true){
+        const action = yield;
+        console.log('이전 액션 : ',  prevAction);
+        prevAction = action;
+        if(action.type === 'HELLO'){
+            console.log('안녕하세요');
+        }
+    }
+}
+const watch = watchGenerator();
+watch.next();
 
+// 콘솔창 출력
+모니터링 중...
+{value: undefined, done: false}
+
+> watch.next({type: 'TEST'});
+VM1316:6 이전 액션 :  null
+{value: undefined, done: false}
+
+> watch.next({type: 'HELLO'});
+VM1316:6 이전 액션 :  {type: 'TEST'}
+VM1316:9 안녕하세요 // type이 매칭되어 출력
+{value: undefined, done: false}
+```
 
   
 
@@ -1687,5 +1716,6 @@ https://jsonplaceholder.typicode.com/
 
 ### 설문/통계 사이트 
 https://survey.stackoverflow.co/2022/#section-most-popular-lechnoscripting-and-markup-languages
+
 
 
