@@ -1557,6 +1557,13 @@ https://jsonplaceholder.typicode.com/
   "type": "module"
   ```
 
+  #### 내보내기 공유 설정
+  ESM 문법으로 export와 import 모듈 설정을 쓸 수 있다.
+  ex) nodeLearning/index.js
+  > npm run start
+  출력 3.141592 3.141592 6.283184
+
+
 
 
 ## React app

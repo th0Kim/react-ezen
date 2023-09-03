@@ -1,3 +1,4 @@
-import { PI, getArea, getCircumference } from "./circle.js";
+// import { PI, getArea, getCircumference } from "./circle.js";
+import * as circle from "./circle.js"; //모든 값 불러오기
 
-console.log(PI, getArea(1), getCircumference(1));
+console.log(circle.PI, circle.getArea(1), circle.getCircumference(1));
