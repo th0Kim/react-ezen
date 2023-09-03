@@ -1530,8 +1530,25 @@ https://jsonplaceholder.typicode.com/
   > npm init
   또는 
   > npm install
-
   pakage.json 파일이 생성 됨
+  
+  #### pakage.json
+  복잡한 명령어를 이 언어로 대체해서 실행 시킬 수 있다.
+
+  명령어 기본값
+  ```
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  ```
+
+  start 명령어 추가 : 터미널에서 npm run start
+  ```
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  ```
 
 ## React app
 - 개발 소스 하나로 ios/android 환경에서 사용 할 수 있다.(javascript의 확장성)
