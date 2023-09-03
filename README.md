@@ -1575,11 +1575,17 @@ https://jsonplaceholder.typicode.com/
     #### npm 라이브러리 사이트(전세계 개발자들이 만든 라이브러리가 등록 되어 있다)
     https://www.npmjs.com/
     - lodash : 데이터(데이터 군집) 컨트롤 편리 기능
-      pakage.json에 추가 됨  
+      pakage.json에 추가 됨(^표시는 범위에 있는 버젼으로 정확한 버젼은 아님)
       ```
       "dependencies": {
         "lodash": "^4.17.21"
       }
+      ```
+      pakage-lock.json에 정확한 라이브러리의 버젼을 알려준다.
+      ```
+       "node_modules/lodash": {
+          "version": "4.17.21",
+       }
       ```
 
 
