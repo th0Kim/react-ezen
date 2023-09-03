@@ -1528,6 +1528,10 @@ const loggerMiddleware = function loggerMiddleware(store) { //store: 리덕스 �
   - 웹 소켓을 사용 할 때
   - API 요청 실패시 재요청해야 할 때
 
+  설치
+  yarn add redux-saga
+  
+
 #### es6 제너레이터(generator) 함수 : 특정 구간에서 함수를 멈출 수 있다. 원할 때 다시 돌아가게 할 수 있다.
 ```
 // 사용방법 ex1
