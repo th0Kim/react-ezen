@@ -1513,3 +1513,20 @@ https://jsonplaceholder.typicode.com/
 
 # 20230903
 
+## Node.js
+
+- javascript가 각광 받는 이유는 Node가 등장 전/후 차이가 있다.
+- javascript 실행 환경이 웹브라우저 이다.
+- node.js는 또 하나의 javascript 실행 환경 이다.(run time)
+- node.js 설치 시 윈도우 계정명이 영어이여야 함(한글이면 오류 생길 가능성 있음)
+- LTS : 장기적으로 안정적인 버젼 (짝수: 3년 이상 지원, 홀수: 1년 이하 시험버젼)
+- npm : node pakage manager
+
+
+## React app
+- 개발 소스 하나로 ios/android 환경에서 사용 할 수 있다.(javascript의 확장성)
+
+
+### 설문/통계 사이트 
+https://survey.stackoverflow.co/2022/#section-most-popular-lechnoscripting-and-markup-languages
+
