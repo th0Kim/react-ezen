@@ -1572,6 +1572,16 @@ https://jsonplaceholder.typicode.com/
     import circle from "./circle.js";
     ```
 
+    #### npm 라이브러리 사이트(전세계 개발자들이 만든 라이브러리가 등록 되어 있다)
+    https://www.npmjs.com/
+    - lodash : 데이터(데이터 군집) 컨트롤 편리 기능
+      pakage.json에 추가 됨  
+      ```
+      "dependencies": {
+        "lodash": "^4.17.21"
+      }
+      ```
+
 
 
 ## React app
