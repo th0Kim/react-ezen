@@ -1714,6 +1714,12 @@ https://jsonplaceholder.typicode.com/
 
 ----- End of nodeLearning
 
+### build
+  CLI 환경에서는 webpack이 하나의 파일로 합쳐준다. 이러한 코드 분리 작업을 splitting이라고 한다
+  
+  yarn build
+
+
 ## React app
 - 개발 소스 하나로 ios/android 환경에서 사용 할 수 있다.(javascript의 확장성)
 
