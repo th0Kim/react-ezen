@@ -1557,20 +1557,20 @@ https://jsonplaceholder.typicode.com/
   "type": "module"
   ```
 
-  #### 내보내기 공유 설정
-  ESM 문법으로 export와 import 모듈 설정을 쓸 수 있다.
-  ex) nodeLearning/index.js
-  > npm run start
-  출력 3.141592 3.141592 6.283184
+    #### 내보내기 공유 설정
+    ESM 문법으로 export와 import 모듈 설정을 쓸 수 있다.
+    ex) nodeLearning/index.js
+    > npm run start
+    출력 3.141592 3.141592 6.283184
 
-  export 파일
-  ```
-  export default {}
-  ```
-  import 파일 : default를 써줌으로서 import에서 * as를 쓰지 않아도 값을 사용 할 수 있다.
-  ```
-  import circle from "./circle.js";
-  ```
+    export 파일
+    ```
+    export default {}
+    ```
+    import 파일 : default를 써줌으로서 import에서 * as를 쓰지 않아도 값을 사용 할 수 있다.
+    ```
+    import circle from "./circle.js";
+    ```
 
 
 
