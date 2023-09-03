@@ -1,6 +1,6 @@
 import { handleActions } from "redux-actions";
 import * as api from "../lib/api";
-import createRequestThunk from "../lib/createRequestThumnk"; //리팩토링
+import createRequestThunk from "../lib/createRequestThunk"; //리팩토링
 
 // 액션 타입을 선언한다.
 // 한 요청당 세개를 만들어야 한다.
@@ -21,7 +21,7 @@ export const getUsers = createRequestThunk(GET_USERS, api.getUsers);
 // thunk 함수를 생성한다.
 // thunk 함수 내부에서는 시작 할 때, 성공 할 때, 실패 했을 때 다른 액션을 디스패치한다.
 
-// 액션 함수 -> lib/createRequestThumnk.js 으로 리팩토링
+// 액션 함수 -> lib/createRequestThunk.js 으로 리팩토링
 // export const getPost = (id) => async (dispatch) => {
 //   dispatch({ type: GET_POST }); // 요청을 시작한 것을 알림
 //   try {
