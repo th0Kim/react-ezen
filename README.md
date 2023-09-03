@@ -1528,6 +1528,66 @@ const loggerMiddleware = function loggerMiddleware(store) { //store: 리덕스 �
   - 웹 소켓을 사용 할 때
   - API 요청 실패시 재요청해야 할 때
 
+#### es6 제너레이터(generator) 함수 : 특정 구간에서 함수를 멈출 수 있다. 원할 때 다시 돌아가게 할 수 있다.
+```
+// 사용방법 ex1
+function* generatorFunction(){
+    console.log('hello');
+    yield 1;
+    console.log('generator function');
+    yield 2;
+    console.log('function');
+    yield 3;
+    return 4;
+}
+const generator = generatorFunction();
+
+
+// 콘솔창 출력
+> generator.next()
+VM450:2 hello
+{value: 1, done: false}
+
+> generator.next();
+VM450:4 generator function
+{value: 2, done: false}
+
+> generator.next();
+VM450:6 function
+{value: 3, done: false}
+
+> generator.next();
+{value: 4, done: true}
+
+> generator.next();
+{value: undefined, done: true} //true : 종료
+
+```
+```
+// 사용방법 ex2
+function* sumGenerator() {
+  console.log('sumGenerator 만들어졌다');
+  let a = yield;
+  let b = yield;
+  yield a + b ;
+}
+const sum = sumGenerator();
+sum.next();
+
+// 콘솔창 출력
+sumGenerator 만들어졌다
+{value: undefined, done: false}
+
+> sum.next(2);
+{value: undefined, done: false}
+
+>sum.next(3);
+{value: 5, done: false}
+
+> sum.next();
+{value: undefined, done: true} //true : 종료
+
+```
 
 
   
@@ -1627,6 +1687,5 @@ https://jsonplaceholder.typicode.com/
 
 ### 설문/통계 사이트 
 https://survey.stackoverflow.co/2022/#section-most-popular-lechnoscripting-and-markup-languages
-
 
 
