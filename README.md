@@ -1520,8 +1520,18 @@ https://jsonplaceholder.typicode.com/
 - node.js는 또 하나의 javascript 실행 환경 이다.(run time)
 - node.js 설치 시 윈도우 계정명이 영어이여야 함(한글이면 오류 생길 가능성 있음)
 - LTS : 장기적으로 안정적인 버젼 (짝수: 3년 이상 지원, 홀수: 1년 이하 시험버젼)
-- npm : node pakage manager
+- npm : node pakage manager(여러가지 파일을 관리 하는 것)
 
+  #### 터미널에서 js 실행하기
+  > node sample.js
+  hello
+
+  #### node.js 패키지 만들기
+  > npm init
+  또는 
+  > npm install
+
+  pakage.json 파일이 생성 됨
 
 ## React app
 - 개발 소스 하나로 ios/android 환경에서 사용 할 수 있다.(javascript의 확장성)
