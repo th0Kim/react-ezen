@@ -1725,6 +1725,6 @@ https://survey.stackoverflow.co/2022/#section-most-popular-lechnoscripting-and-m
 
 
 ## 복습 할 것
-redux-thunk
-redux-saga
-async await
+redux-thunk : 함수를 넘길 수 있다.
+redux-saga : 시점 분리 할 수 있다.
+async await : 비동기
