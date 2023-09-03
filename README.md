@@ -1522,7 +1522,15 @@ const loggerMiddleware = function loggerMiddleware(store) { //store: 리덕스 �
   참고 : middleware > SampleContainer.js
 
 
+### redux-saga : 비동기 작업 관련 미들웨어
+  - 기존 요청을 취소 처리해야 할 때(불필요한 중복 요청 방지)
+  - 특정 액션이 발생했을 때 다른 액션을 발생시키거나, API 요청 등 리덕스와 관계 없는 코드를 실행 할 때
+  - 웹 소켓을 사용 할 때
+  - API 요청 실패시 재요청해야 할 때
 
+
+
+  
 
 
 #### 데이터 리소스
@@ -1619,5 +1627,6 @@ https://jsonplaceholder.typicode.com/
 
 ### 설문/통계 사이트 
 https://survey.stackoverflow.co/2022/#section-most-popular-lechnoscripting-and-markup-languages
+
 
 
