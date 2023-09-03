@@ -9,7 +9,7 @@ const DECREASE_ASYNC = "counter/DECREASE_ASYNC";
 export const increase = createAction(INCREASE);
 export const decrease = createAction(DECREASE);
 
-export const increaseAsync = createAction(INCREASE_ASYNC, () => undefined);
+export const increaseAsync = createAction(INCREASE_ASYNC, () => undefined); //payload 자리에 (잘못된) 값이 들어가지 않도록 undefined 처리
 export const decreaseAsync = createAction(DECREASE_ASYNC, () => undefined);
 
 function* increaseSaga() {
