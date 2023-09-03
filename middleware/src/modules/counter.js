@@ -13,12 +13,12 @@ export const increaseAsync = createAction(INCREASE_ASYNC, () => undefined);
 export const decreaseAsync = createAction(DECREASE_ASYNC, () => undefined);
 
 function* increaseSaga() {
-  yield delay(100); //1초 기다린다
+  yield delay(1000); //1초 기다린다
   yield put(increase()); //특정 액션을 디스패치한다.
 }
 
 function* decreaseSaga() {
-  yield delay(100);
+  yield delay(1000);
   yield put(decrease());
 }
 
