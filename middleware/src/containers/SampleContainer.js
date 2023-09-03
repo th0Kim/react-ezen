@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getPost, getUsers } from "../modules/sample";
+import loading from "../modules/loading";
 import Sample from "../components/Sample";
 
 const { useEffect } = React;
@@ -31,8 +32,8 @@ export default connect(
   ({ sample }) => ({
     post: sample.post,
     users: sample.users,
-    loadingPost: sample.loading.GET_POST,
-    loadingUsers: sample.loading.GET_USERS,
+    loadingPost: loading["sample/GET_POST"],
+    loadingUsers: loading["sample/GET_USERS"],
   }),
   {
     getPost,
