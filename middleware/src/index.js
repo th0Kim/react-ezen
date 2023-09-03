@@ -8,6 +8,7 @@ import { createLogger } from "redux-logger";
 //import loggerMiddleware from './lib/loggerMiddleware';
 import ReduxThunk from "redux-thunk";
 import createSagaMiddleware from "@redux-saga/core";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const logger = createLogger(); //redux-logger
@@ -16,9 +17,10 @@ const sagaMiddleware = createSagaMiddleware();
 //스토어 생성
 const store = createStore(
   rootReducer,
-  // composeWithDevTools,
   // applyMiddleware(loggerMiddleware) //console로 확인 가능
-  applyMiddleware(logger, ReduxThunk, sagaMiddleware) //redux-logger console로 확인 가능  //redux-thunk
+  composeWithDevTools(
+    applyMiddleware(logger, ReduxThunk, sagaMiddleware) //redux-logger console로 확인 가능  //redux-thunk
+  )
 );
 sagaMiddleware.run(rootSaga);
 
