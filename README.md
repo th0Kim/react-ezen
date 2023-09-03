@@ -577,6 +577,23 @@ import React, { useEffect } from "react";
 	}, [name]);
 ```
 
+- [deps] : 의존성 배열
+리액트가 언제 컴포넌트를 다시 리랜더링 할지 결정하는데 사용. 배영 값으로 이전 렌더링과 비교 후 변경이 있으면 해당 훅 내용이 실행되거나 값이 업데이트 됨
+```
+  // hook 기본 구조
+  useEffect(() => {
+    // 이펙트 내용
+  }, [deps]);
+
+```
+
+메모제이션(memozation) : 이전에 계산된 값을 저장해 두었다가 나중에 동일한 입력에 대안 중복 계산을 방지하고 성능을 최적화 하는 방법. 함수나 계산 비용이 큰 연산을 수행 할 때 사용
+  React에서 memozation은 useMemo와 useCallback 훅을 사용하여 함수나 값의 결과를 이전 계산된 결과로 저장하고 해당 값이 변경되지 않는 한 이전 결과를 사용하는 것, 이렇게 하여 동일한 계산을 중복으로 수행하지 않아 성늘을 향상 시킬 수 있다.
+  ```
+  const memozationCallback = useCallback(() => performOperation(a, b), [a, b]);
+  ```
+
+
 ---
 
 # 20230723
