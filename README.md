@@ -1715,9 +1715,19 @@ https://jsonplaceholder.typicode.com/
 ----- End of nodeLearning
 
 ### build
-  CLI 환경에서는 webpack이 하나의 파일로 합쳐준다. 이러한 코드 분리 작업을 splitting이라고 한다
-  
+  빌드 명령어
   yarn build
+  
+  CLI 환경에서는 build를 하면 webpack이 하나의 파일로 합쳐 주는데 build/static/js/main.js에서 불필요하게 전부 불러온다. 
+  실제 함수가 필요한 시점에 파일을 불러올 수 있게 코드 분리 작업을 코드  splitting이라고 한다.
+
+  ```
+  // 분리 된 파일 : build/static/js/154.914 ~.chunk.js.map
+  // 클릭을 실행 했을 때만 static/js/src_notify_js.chunk.js 가 불러온다(f12 Network에서 확인)
+    const onClick = () => {
+      import("./notify").then((result) => result.default());
+    };
+  ```
 
 
 ## React app
