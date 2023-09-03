@@ -1719,3 +1719,8 @@ https://survey.stackoverflow.co/2022/#section-most-popular-lechnoscripting-and-m
 
 
 
+
+## 복습 할 것
+redux-thunk
+redux-saga
+async await
